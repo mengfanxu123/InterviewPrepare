@@ -164,6 +164,20 @@ same as Component except it handle the shouldComponentUpdate method for you. Whe
 
 Component wont compare current props and state to next out of box,. the component will re-render by default whenever shoudComponentUpdate is called 
 
+### Pure Function Component
+
+A component that has no internal state of its own, and thus is often written as a function as opposed to an ES6 class. 
+
+### React.memo
+
+is a higher order component , similar to Pure component, but it is function components instead of class component
+
+```jsx
+const MyComponent = React.memo(function MyComponent(props){
+    
+})
+```
+
 ### How to prevent rerender\(\) ? 
 
 render\(\) many times 
@@ -171,4 +185,106 @@ render\(\) many times
 1. use pureComponent : shouldComponentUpdate called and shallow compare the state and judge whether render change 
 
 2. used shouldComponentUpdate
+
+### Elements vs Component 
+
+elements: elements are the smallest building blocks of react apps. React elements are plain object, and are cheap to create
+
+to render a React element into a root DOM node, pass both to ReactDOM.render\(\). typical elements are not used directly, but get returned form component
+
+React components are small, reusable pieces of code that return elements be render to the pages
+
+code written with JSX will be covered to use React.createElement\(\), you will not typcially invoke React.createElement\(\)
+
+```jsx
+const element = <h1>hello word</h1>
+ReactDOM.render(element, document.getElementbyId('root'))
+```
+
+### React Ref
+
+React.creatRef creates a ref that can attached to react elements via react ref attributes, by using Refs, you can reused refs as much as you can
+
+```jsx
+class AutoFocusTextInput extends React,Componnet {
+    constructor(props){
+    super(props);
+    this.textInput = React.createRef();
+    }
+    componentDidMount(){
+    this.textInput.current.focusTextInput()
+    }
+    render(){
+        return(
+            <CustomTextInput ref={this.textInput}>
+        )
+    }
+}
+```
+
+### Reacy.forwardRef
+
+Ref forward is a technique for automatically passing a ref though a component to one of its children
+
+```jsx
+const FancyButton = React.forwardRef((props, ref) => {
+    <button ref={ref} className="FancyButton">
+    {props.children}
+    </button>
+});
+const ref = React.createRef();
+<FancyButton ref={ref}>Click me!</FancyButton>
+```
+
+### React.lazy
+
+React.lazy\(\) let you define a component that is loaded dynamically. This helps reduce the bundle size to delay loading components that aren't used during initial render
+
+```jsx
+const SomeComponent = React.lazy(()=>import("./SomeComponent"))
+```
+
+### Error Handling Method - Error Boundary
+
+Catch javaScript error anywhere and display a fallback UI instead of the  component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
+
+A class component becomes an error boundary if it defines ether of lifecycle  methods static getDerivedStateFormError\(\) or ComponentDidCatch\(\). Use static getDerivedStateFromError\(\) to render a fallback UI after erros has been throw. Use componentDidCatch\(\) to log error information
+
+Error Boundary does not catch errors for:
+
+* Event handlers
+* Asynchronous code
+* Server side rendering
+* Errors thrown in the error boundary itself
+
+```jsx
+class ErrorBoundary extends Component{
+    state = {
+        hasError: false,
+        errorMessage: ""
+    }
+    static getDerivedStateFromError(error){
+        return{hasError: true}
+    }
+    componentDidCatch =(error,info)=>{
+        this.setState({
+            hasError: true,
+            errorMassage: error
+        })
+    }
+    render(){
+        if(this.state.hasError){
+            return <h1>{this.state.errorMassage</h1>
+        }
+        return this.props.children
+    }
+}
+exprot default ErrorBoundary
+```
+
+### Controlled Component vs Uncontrolled Component
+
+
+
+ 
 
