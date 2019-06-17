@@ -94,7 +94,14 @@ set parent element display: flex
 * absolute: is positioned relative to the nearest positioned ancestor 
 * sticky: is positioned based on the user's scroll position. Between relative and fixed
 
+### Responsive Design
 
+* Meidia query
+
+  * define different style rules for different media types and handle different devices' viewport
+
+* Flexbox
+  * need a container with attributes display: display : flex flex-wrap
 
 
 

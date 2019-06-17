@@ -127,5 +127,11 @@ if (typeof(Storage) !== "undefined") {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+Form Validation
 
+HTML5 constraint validation is based on:
+
+* HTML input Attributes: disabled, max, required
+* CSS Pseudo Seletors: :disabled, :valid, :required
+* DOM Properties and Methods
 
