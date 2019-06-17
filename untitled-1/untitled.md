@@ -2,7 +2,7 @@
 
 ### How to make div inline
 
-```markup
+```css
 //1. flex
 .parent{
     display: flex

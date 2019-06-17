@@ -83,3 +83,49 @@ table, th, td {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+### Attribute vs Property
+
+Attribute are defined on the HTML but property defined on the DOM
+
+### Cookie vs SessionStorage vs LocalStorage
+
+* LocalStorage: store data locally within user browser 
+* SessionStorage: store data also locally but when tab closed, data disappear
+* cookie: cookie store data on computer
+
+|  | Cookie | LocalStorage | SessionStorage |
+| :--- | :--- | :--- | :--- |
+| initiator | client or server, can use set-cookie header | client  | client |
+| Expiry | manually set | forever | on tab  close |
+| persistent  across browser sessions | whether expiration is set | yes | no |
+| sent to server with every HTTP request | being sent via cookie | no | no |
+| capacity | 4kb | 5mb | 5mb |
+| accessibility | any window | any window | same tab |
+
+{% code-tabs %}
+{% code-tabs-item title="localStorage" %}
+```markup
+
+<html>
+<body>
+<div id="result"></div>
+<script>
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+  // Store
+  localStorage.setItem("lastname", "Smith");
+  // Retrieve
+  document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+} else {
+  document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+</script>
+</body>
+</html>
+
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+
+
