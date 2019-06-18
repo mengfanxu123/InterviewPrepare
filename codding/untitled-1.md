@@ -65,3 +65,35 @@ function clickFunction(){
 }
 ```
 
+### Find List used dictionary
+
+give a string list and a string, according to this string, to give an list order by this string
+
+input " String  s = "word" Stirng list = \["wait". "rain", "dead", "oh'\] output : \["wait", "oh", "rain", "dead"\]
+
+```javascript
+let str = "word";
+let arr = ["oao", "rain", "dead", "ocr"];
+
+const alienSort = (str, arr) => {
+  const map = {};
+  str.split("").forEach((element, index) => {
+    if (!map[element]) {
+      map[element] = index;
+    }
+  });
+  console.log(map);
+  arr.sort((a, b) => {
+    const min = a.length < b.length ? a.length : b.length;
+    for (let i = 0; i < min; i++) {
+      if (a[i] !== a[i]) return map[a[i]] - map[b[i]];
+      else continue;
+    }
+    return 0;
+  });
+  return arr;
+};
+
+console.log(JSON.stringify(alienSort(str, arr)));
+```
+

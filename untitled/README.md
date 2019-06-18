@@ -286,5 +286,35 @@ exprot default ErrorBoundary
 
 
 
+### Three way to handle events 
+
+* Bind this in the constructor
+
+```jsx
+constructor(props){
+    super(props);
+    this.state ={};
+    this.handleClick = this.handleClick.bind(this);
+}
+```
+
+* Use arrow function
+
+```jsx
+handleClick =()=> {
+// output
+}
+```
+
+* use arrow function in the callback 
+
+```jsx
+render(){
+    return(
+    <button onclick={(e) => this.handleClick(e)}>Click</button>
+    )
+}
+```
+
  
 
