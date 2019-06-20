@@ -316,5 +316,22 @@ render(){
 }
 ```
 
+### PropTypes
+
+you can use PropType to catch a lot of bugs with typechecking. You can use JavaScript extension like Flow or TypeSCript to typecheck you whole application
+
+```jsx
+class Greeting extends React.Component{
+    render(){
+        return (
+        <h1>Hell, {this.props.name}</h1>
+        );
+    }
+    Greeting.propTypes = {
+    name: PropTypes.string
+    }
+}
+```
+
  
 
