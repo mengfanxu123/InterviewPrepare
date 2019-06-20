@@ -150,3 +150,16 @@ for (const f of [func1, func2, func3]) {
 }
 ```
 
+### Splice\(\)
+
+Syntax: 
+
+```text
+var arrDeletedItems = array.splice(start[, deleteCount[, item1[, item
+2[, ...]]]])
+```
+
+char.splice\(startIndex, removeItemsNums, insert items1, intert items2\)
+
+
+
