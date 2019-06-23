@@ -22,3 +22,13 @@ Synthetic Event is a cross-browser wrapper around the browser's native event. It
 4. The container knows that state has changed and modifies a specific prop in component as result of mapStateToprops function
 5. The component has a props has officially changed due to a new state being genegerated, so if state is responsibe for any UI, the user will see it change
 
+### 3 Fundamentals
+
+* **Single source of truth**-the state of you whole application is stored in an object tree within a single store
+* **State is read-only**-the only way to change state is to create an action, an object describing what happened
+* **changes are made with pure functions**-to specify how the state tree is transformed by actions, you write pure reducers
+
+
+
+
+
