@@ -161,7 +161,33 @@ var arrDeletedItems = array.splice(start[, deleteCount[, item1[, item
 
 char.splice\(startIndex, removeItemsNums, insert items1, intert items2\)
 
-### 
+### Ways to improve the website loading time
+
+* improve your hosting plan
+* understand http request and reduce the http request
+* make images internet-friendly. compress your image, lazy loading content
+* take advantage of caching: download to you hard drive once into cache, or temporary storage space. Those files are now store locally. 
+* Uitilize CDNS and Remove Unused Script 
+
+### Event Loop
+
+JS is a single thread language and allow js to use promise and callback during the event loop, first function will be added to a call stack, when this function is settime out or this is a promise, it will be added to event queue, we will check the call stack whether empty or not, if it is empty, it will then add the event queue function to stack, and execute 
+
+### Prototypal inheritance VS Classical inheritance
+
+classical inheritance: a description of the object to be created. Classes inherit from classes and create subclass relationships.
+
+prototypal inheritance: a prototype is a working object instance. Objects inherit directly from other objects. 
+
+### Assign
+
+
+
+```javascript
+var obj = { a: 1 };
+var copy = Object.assign({}, obj);
+console.log(copy); // { a: 1 }
+```
 
 
 

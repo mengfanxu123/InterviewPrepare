@@ -14,6 +14,7 @@
 
 ## codding
 
+* [Output](codding/output.md)
 * [React](codding/react.md)
 * [leetcode](codding/leetcode/README.md)
   * [1.2sum](codding/leetcode/1.2sum.md)
@@ -21,8 +22,11 @@
   * [341. Flatten Nested List Iterator](codding/leetcode/341.-flatten-nested-list-iterator.md)
   * [509 Fibonacci Number](codding/leetcode/509-fibonacci-number.md)
   * [443.String Compression](codding/leetcode/443.string-compression.md)
-* [Untitled](codding/untitled.md)
+* [Project](codding/untitled.md)
 * [Coding during interview](codding/untitled-1/README.md)
+  * [implement the map function](codding/untitled-1/implement-the-map-function.md)
+  * [Merge Object Array](codding/untitled-1/merge-object-array.md)
+  * [Remove Duplicate Number](codding/untitled-1/remove-duplicate-number.md)
   * [Flatten](codding/untitled-1/flatten.md)
   * [List and Search bar](codding/untitled-1/list-and-search-bar.md)
 

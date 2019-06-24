@@ -84,7 +84,12 @@ set parent element display: flex
 </div>
 ```
 
-[https://codepen.io/mengfanxu123/pen/qGGZZO](https://codepen.io/mengfanxu123/pen/qGGZZO)
+{% embed url="https://codepen.io/mengfanxu123/pen/qGGZZO" %}
+
+### Flex Vs Grid 
+
+* grid is two dimensions and flex is one dimension
+* grid is more useful in large part and flex is more useful in small part 
 
 ### [P](https://codepen.io/mengfanxu123/pen/qGGZZO)osition
 

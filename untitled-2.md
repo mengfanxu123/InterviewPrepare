@@ -14,10 +14,14 @@ Synthetic Event is a cross-browser wrapper around the browser's native event. It
 
 ### React data flow
 
+React - react data Flow
+
+![](.gitbook/assets/assets_-lbz2uugqoepscimtbja_-lchwecdrwwgua9__n_k_-lchcgsekmvw_e4a7gzl_image.png)
+
 ![Redux Data FLow](.gitbook/assets/screen-shot-2019-06-15-at-10.57.07-pm.png)
 
 1. The user clicks a button in the app and a component prop is called like a function
-2. the coresponding container dispatches an action. This happened the prop is tied to an action dispatcher using **mapDispatchToprops** 
+2. the corresponding container dispatches an action. This happened the prop is tied to an action dispatcher using **mapDispatchToprops** 
 3. A reducer "hears actions and run a function which returns a new state with specific modifications
 4. The container knows that state has changed and modifies a specific prop in component as result of mapStateToprops function
 5. The component has a props has officially changed due to a new state being genegerated, so if state is responsibe for any UI, the user will see it change

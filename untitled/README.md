@@ -42,6 +42,12 @@ const withSecretTolift = (WrappComponent) => {
 }
 ```
 
+example for english to CN
+
+{% embed url="https://codesandbox.io/s/chinese-to-english-hoc-ifvvd" %}
+
+
+
 ![lifecycle](../.gitbook/assets/1_u8htumgapqmyzivfgqmfpa.jpeg)
 
 ### state vs props
