@@ -19,6 +19,8 @@
 * [leetcode](codding/leetcode/README.md)
   * [1.2sum](codding/leetcode/1.2sum.md)
   * [15.3sum](codding/leetcode/15.3sum.md)
+  * [33. Search in Rotated Sorted Array](codding/leetcode/33.-search-in-rotated-sorted-array.md)
+  * [110. Balanced Binary Tree](codding/leetcode/110.-balanced-binary-tree.md)
   * [341. Flatten Nested List Iterator](codding/leetcode/341.-flatten-nested-list-iterator.md)
   * [509 Fibonacci Number](codding/leetcode/509-fibonacci-number.md)
   * [443.String Compression](codding/leetcode/443.string-compression.md)
