@@ -3,7 +3,7 @@
 ### API Method
 
 * Create - post
-* Read-set
+* Read-get
 * Update-put
 * Delete-Delete
 

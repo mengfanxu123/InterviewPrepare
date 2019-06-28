@@ -15,6 +15,7 @@
 * ShouldComponentUpdate\(nextProps, state\) decide whether continuing or not, may cancel update process
 * Render\(\) 
 * getSnapshotBeforeUpdate\(\): replace componentwillUpdate: new component update in DOM. To keep the third party library UI in acy with every update
+* componentDidUpdate\(\): cause side effect
 
 ### Unmount:
 
@@ -252,7 +253,7 @@ const SomeComponent = React.lazy(()=>import("./SomeComponent"))
 
 ### Error Handling Method - Error Boundary
 
-Catch javaScript error anywhere and display a fallback UI instead of the  component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
+Catch javaScript error anywhere and display a falback UI instead of the  component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
 
 A class component becomes an error boundary if it defines ether of lifecycle  methods static getDerivedStateFormError\(\) or ComponentDidCatch\(\). Use static getDerivedStateFromError\(\) to render a fallback UI after erros has been throw. Use componentDidCatch\(\) to log error information
 
@@ -338,6 +339,14 @@ class Greeting extends React.Component{
     }
 }
 ```
+
+### React Router 
+
+```text
+
+```
+
+### 
 
  
 

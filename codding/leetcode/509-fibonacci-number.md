@@ -38,5 +38,21 @@ const fib = N => {
 // time complexity o(n)
 // space O(n)
 
+// 
+
+var fib = function(N) {
+    if (N === 0 || N === 1){
+        return N;
+    }
+    let a = 0;
+    let b = 1;
+    while (N > 1){
+        let sum = a + b
+        a = b;
+        b = sum
+        N--;
+    }
+    return b;
+};
 ```
 

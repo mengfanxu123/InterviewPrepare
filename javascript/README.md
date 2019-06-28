@@ -173,6 +173,15 @@ char.splice\(startIndex, removeItemsNums, insert items1, intert items2\)
 
 JS is a single thread language and allow js to use promise and callback during the event loop, first function will be added to a call stack, when this function is settime out or this is a promise, it will be added to event queue, we will check the call stack whether empty or not, if it is empty, it will then add the event queue function to stack, and execute 
 
+this has two kinds of event in event Queue, micro and macro micro is settimeout and setinterval, macro is new promise
+
+```javascript
+console.log(1)
+setTimeout(() => {  console.log(2)}, 0)
+Promise.resolve().then(() => {	console.log(3)})
+.then(() => {	console.log(4)})console.log(5)
+```
+
 ### Prototypal inheritance VS Classical inheritance
 
 classical inheritance: a description of the object to be created. Classes inherit from classes and create subclass relationships.
@@ -189,5 +198,23 @@ var copy = Object.assign({}, obj);
 console.log(copy); // { a: 1 }
 ```
 
+## Fetch 
 
+A Fetch API provides a fetch method defined on a window object, which you can use to perform requests and sent it to the server. This method returns a Promise that you can use to retrieve the response of the request. 
+
+### Map and forEach
+
+forEach : parameter is function, change the original array and return it
+
+Map: return a new array and original one is not modified 
+
+### Why arrow function
+
+run quickly and very clear concise syntax and more intuitive scope and no need to bind this
+
+## `Call` vs `Apply`
+
+Both are used to invoke functions and the first parameter will be used as the value of `this` within the function. However, `call` takes in comma-separated arguments as the next arguments while `apply` takes in an array of arguments as the next argumement
+
+### 
 
