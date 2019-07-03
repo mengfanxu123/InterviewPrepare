@@ -216,5 +216,9 @@ run quickly and very clear concise syntax and more intuitive scope and no need t
 
 Both are used to invoke functions and the first parameter will be used as the value of `this` within the function. However, `call` takes in comma-separated arguments as the next arguments while `apply` takes in an array of arguments as the next argumement
 
-### 
+### Array.slice\(\) VS Array.splice\(\)
+
+1. The splice\(\) method returns the removed item\(s\) in an array and slice\(\) method returns the selected element\(s\) in an array, as a new array object.
+2. The splice\(\) method changes the original array and slice\(\) method doesn’t change the original array.
+3. The splice\(\) method can take n number of arguments and slice\(\) method takes 2 arguments.
 

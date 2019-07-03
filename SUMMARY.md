@@ -31,7 +31,7 @@
   * [88. Merge Sorted Array](codding/leetcode/88.-merge-sorted-array.md)
   * [90.Subsets II](codding/leetcode/90.subsets-ii.md)
   * [91. Decode Ways](codding/leetcode/91.-decode-ways.md)
-  * [100. Same Tree](codding/leetcode/100.-same-tree.md)
+  * [100. Same Tree && 101. Symmetric Tree](codding/leetcode/100.-same-tree.md)
   * [110. Balanced Binary Tree](codding/leetcode/110.-balanced-binary-tree.md)
   * [111. Minimum Depth of Binary Tree](codding/leetcode/111.-minimum-depth-of-binary-tree.md)
   * [46. Permutations](codding/leetcode/46.-permutations.md)
