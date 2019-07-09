@@ -318,7 +318,7 @@ handleClick =()=> {
 ```jsx
 render(){
     return(
-    <button onclick={(e) => this.handleClick(e)}>Click</button>
+    <button onclick={() => this.handleClick(e)}>Click</button>
     )
 }
 ```

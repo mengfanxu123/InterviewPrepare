@@ -97,3 +97,8 @@ const alienSort = (str, arr) => {
 console.log(JSON.stringify(alienSort(str, arr)));
 ```
 
+ **写react，有一个ul，里面有三个li, 每个li都有content, 但是要求初始content是隐藏的，点击其中任何一个li, 这个li的content就在下方显示出来，其他两个li就要collpase**
+
+**我用react写了一段，但是发现要在render\(\) jsx template里选择li似乎有些问题，可能要用ref**  
+
+
