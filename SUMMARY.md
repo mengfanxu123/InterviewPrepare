@@ -40,6 +40,8 @@
   * [102. Binary Tree Level Order Traversal](codding/leetcode/102.-binary-tree-level-order-traversal.md)
   * [110. Balanced Binary Tree](codding/leetcode/110.-balanced-binary-tree.md)
   * [111. Minimum Depth of Binary Tree](codding/leetcode/111.-minimum-depth-of-binary-tree.md)
+  * [112. Path Sum](codding/leetcode/112.-path-sum.md)
+  * [113. Path Sum II](codding/leetcode/113.-path-sum-ii.md)
   * [121. Best Time to Buy and Sell Stock](codding/leetcode/121.-best-time-to-buy-and-sell-stock.md)
   * [124. Binary Tree Maximum Path Sum](codding/leetcode/124.-binary-tree-maximum-path-sum.md)
   * [129. Sum Root to Leaf Numbers](codding/leetcode/129.-sum-root-to-leaf-numbers.md)
@@ -67,4 +69,10 @@
   * [Flatten](codding/untitled-1/flatten.md)
   * [List and Search bar](codding/untitled-1/list-and-search-bar.md)
 * [System Design](codding/system-design.md)
+
+## Amazon
+
+* [coding question](amazon/coding-question/README.md)
+  * [Untitled](amazon/coding-question/untitled.md)
+* [Untitled](amazon/untitled-1.md)
 

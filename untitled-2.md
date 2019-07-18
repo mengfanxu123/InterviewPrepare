@@ -32,6 +32,8 @@ React - react data Flow
 * **State is read-only**-the only way to change state is to create an action, an object describing what happened
 * **changes are made with pure functions**-to specify how the state tree is transformed by actions, you write pure reducers
 
+in the reducer, reducer is  an pure function and, this function take the previous state and function and return new state \(next state\)
+
 
 
 
