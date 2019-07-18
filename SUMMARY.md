@@ -38,7 +38,10 @@
   * [91. Decode Ways](codding/leetcode/91.-decode-ways.md)
   * [100. Same Tree && 101. Symmetric Tree](codding/leetcode/100.-same-tree.md)
   * [102. Binary Tree Level Order Traversal](codding/leetcode/102.-binary-tree-level-order-traversal.md)
+  * [103. Binary Tree Zigzag Level Order Traversal](codding/leetcode/103.-binary-tree-zigzag-level-order-traversal.md)
   * [110. Balanced Binary Tree](codding/leetcode/110.-balanced-binary-tree.md)
+  * [112. Path Sum](codding/leetcode/112.-path-sum.md)
+  * [113. Path Sum II](codding/leetcode/113.-path-sum-ii.md)
   * [111. Minimum Depth of Binary Tree](codding/leetcode/111.-minimum-depth-of-binary-tree.md)
   * [121. Best Time to Buy and Sell Stock](codding/leetcode/121.-best-time-to-buy-and-sell-stock.md)
   * [124. Binary Tree Maximum Path Sum](codding/leetcode/124.-binary-tree-maximum-path-sum.md)
@@ -71,6 +74,7 @@
 ## Amazon
 
 * [coding question](amazon/coding-question/README.md)
-  * [Untitled](amazon/coding-question/untitled.md)
+  * [973. K Closest Points to Origin](amazon/coding-question/untitled.md)
+  * [23. Merge k Sorted Lists](amazon/coding-question/23.-merge-k-sorted-lists.md)
 * [Untitled](amazon/untitled-1.md)
 
