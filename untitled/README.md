@@ -348,5 +348,77 @@ class Greeting extends React.Component{
 
 ### 
 
+1. **how do you import multiple functions from one module? give example \(让我白板上写几个case\) //用object**
+
+\*\*\*\*
+
+```text
+export function foo() { console.log('foo') }
+export function bar() { console.log('bar') }
+export function baz() { foo(); bar() }
+
+export default {foo, bar, baz}
+
+// a.js, using default export
+
+import util from './util'
+util.foo()
+
+// b.js, using named exports
+
+import {bar} from './util'
+bar()
+```
+
+### Principle for front end design
+
+### S- single responsibility principle
+
+### O-Open Close principle
+
+### L - Liskov substitution principle
+
+### I- interface segregation principle
+
+### D-dependency inversion principle 
+
+A class should have one and only one reason to change, meaning that a class should only have one job.
+
+```text
+const circle = (radius) => {
+  const proto = { 
+    type: 'Circle',
+    //code 
+  }
+  return Object.assign(Object.create(proto), {radius})
+}
+const square = (length) => {
+  const proto = { 
+    type: 'Square',
+    //code 
+  }
+  return Object.assign(Object.create(proto), {length})
+}
+```
+
+### Diff between Class Component and Functional Component
+
+```javascript
+const welcom = (props) => {
+return <h1>Hello, {props.name}</h1>
+}
+class welcome extends React.Component{
+  render(){
+  return<h1>Hello, {this.props.name}
+  }
+}
+```
+
+1.syntax : function component is plain component and  accept props and return react element class component required extend from react component and 
+
+ 
+
+### 
+
  
 

@@ -86,6 +86,54 @@ set parent element display: flex
 
 {% embed url="https://codepen.io/mengfanxu123/pen/qGGZZO" %}
 
+### How to layout 1:2:1 3 div
+
+{% embed url="https://codepen.io/mengfanxu123/pen/qeEBGx" %}
+
+```css
+.outer{
+  display : flex;
+  flex-wrap: wrap;
+}
+
+.div1{
+  background: red;
+  height: 100px;
+  flex-grow: 1
+}
+
+.div2{
+  background: blue;
+  height: 100px;
+/*   width:25% */
+  flex-grow: 2
+}
+
+.div3{
+  background: pink;
+  height: 100px;
+  flex-grow:1;
+  
+}
+
+.out{
+  display: flex;
+  height: 200px;
+  width: 200px;
+  background: grey;
+  justify-content: center;
+  align-items:center;
+}
+
+.in{
+  height: 100px;
+  width: 100px;
+  background: black
+}
+```
+
+### 
+
 ### Flex Vs Grid 
 
 * grid is two dimensions and flex is one dimension
@@ -102,11 +150,17 @@ set parent element display: flex
 ### Responsive Design
 
 * Meidia query
-
   * define different style rules for different media types and handle different devices' viewport
 
+
+
 * Flexbox
+
   * need a container with attributes display: display : flex flex-wrap
+
+{% embed url="https://codepen.io/mengfanxu123/pen/BXyzoP" %}
+
+{% embed url="https://codepen.io/estelle/pen/brDpB" %}
 
 
 
