@@ -135,3 +135,7 @@ HTML5 constraint validation is based on:
 * CSS Pseudo Seletors: :disabled, :valid, :required
 * DOM Properties and Methods
 
+### What is HTML DOM
+
+The **Document Object Model** \(**DOM**\) is a [cross-platform](https://en.wikipedia.org/wiki/Cross-platform) and [language](https://en.wikipedia.org/wiki/Programming_language)-independent interface that treats an [XML](https://en.wikipedia.org/wiki/XML) or [HTML](https://en.wikipedia.org/wiki/HTML) document as a [tree structure](https://en.wikipedia.org/wiki/Tree_structure) wherein each [node](https://en.wikipedia.org/wiki/Node_%28computer_science%29) is an [object](https://en.wikipedia.org/wiki/Object_%28computer_science%29) representing a part of the document. The DOM represents a document with a logical tree. Each branch of the tree ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree; with them one can change the structure, style or content of a document. Nodes can have event handlers attached to them. Once an event is triggered, the event handlers get executed.[\[2\]](https://en.wikipedia.org/wiki/Document_Object_Model#cite_note-Introduction-2)
+
