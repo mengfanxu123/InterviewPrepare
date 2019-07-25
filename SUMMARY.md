@@ -76,5 +76,6 @@
 * [coding question](amazon/coding-question/README.md)
   * [973. K Closest Points to Origin](amazon/coding-question/untitled.md)
   * [23. Merge k Sorted Lists](amazon/coding-question/23.-merge-k-sorted-lists.md)
+  * [Tree:](amazon/coding-question/tree.md)
 * [Untitled](amazon/untitled-1.md)
 
