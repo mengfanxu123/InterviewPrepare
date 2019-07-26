@@ -1,5 +1,12 @@
 # React
 
+### React advantages
+
+* Virtual DOM improves both the experience of the user and work of the developer — Virtual DOM helps to update any user’s changes without the other parts’ interference by applying isolated components. It greatly helps to smooth the experience of all participants in real time mode.
+* Saving time while re-using React components — React deals with isolated components, that’s why you can reuse them anytime you need. System upgrades will not impact or change your system.
+* The stable code is provided by one-direction data flow — Direct work with each component requires one-direction data flow and makes the code really stable. Another thing is that only downward data binding is possible in this JavaScript framework.
+* An open-source library with a variety of tools — All updates are released to the community. React has had the open-source library and engineers can introduce the additional tools.
+
 ### Component Lifecycle
 
 #### Mount:
