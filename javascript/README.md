@@ -35,9 +35,33 @@ myName = "Mandy"
 
 A closure is inner function that has access to the variables in the outer function
 
+```javascript
+function init(){
+ var name = "a";
+ function b(){
+ alter(name)
+ }
+ b();
+ }
+ 
+ init();
+ 
+ 
+ 
+ function makeAdder(x) {
+  return function(y) {
+    return x + y;
+  };
+}
 
+var add5 = makeAdder(5);
+var add10 = makeAdder(10);
 
-### Callback Function
+console.log(add5(2));  // 7
+console.log(add10(2)); // 12
+```
+
+Callback Function
 
 The callback function is a function passed into another function as argument, which is then invoked inside the outer function to complete an outer function
 
