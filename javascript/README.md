@@ -212,9 +212,89 @@ classical inheritance: a description of the object to be created. Classes inheri
 
 prototypal inheritance: a prototype is a working object instance. Objects inherit directly from other objects. 
 
-### Assign
+```javascript
+class vehicle { 
+constructor(name, type){ 
+this.name = name; this.type = type; }
+ getName(){ return this.name; } 
+ getType(){ return this.type; } 
+ } 
+ let car = new Vehicle("Tesla", "car");
+ 
+ function Vehicle(name, type){
+  this.name = name;
+  this.type = type;
+}
 
+Vehicle.prototype.getName = function getName(){
+  return this.name;
+}
 
+Vehicle.prototype.getType = function getType(){
+  return this.type;
+}
+
+var car = new Vehicle("Tesla", "car"); 
+
+//es5
+function Vehicle (name, type) {
+  this.name = name;
+  this.type = type;
+};
+ 
+Vehicle.prototype.getName = function getName () {
+  return this.name;
+};
+ 
+Vehicle.prototype.getType = function getType () {
+  return this.type;
+};
+function Car (name) {
+  Vehicle.call(this, name, ‘car’);
+}
+Car.prototype = Object.create(Vehicle.prototype);
+Car.prototype.constructor = Car;
+Car.parent = Vehicle.prototype;
+Car.prototype.getName = function () {
+  return 'It is a car: '+ this.name;
+};
+var car = new Car('Tesla');
+console.log(car.getName()); // It is a car: Tesla
+console.log(car.getType()); // car
+
+/// es6
+class Vehicle {
+ 
+  constructor (name, type) {
+    this.name = name;
+    this.type = type;
+  }
+ 
+  getName () {
+    return this.name;
+  }
+ 
+  getType () {
+    return this.type;
+  }
+ 
+}
+class Car extends Vehicle {
+ 
+  constructor (name) {
+    super(name, 'car');
+  }
+ 
+  getName () {
+    return 'It is a car: ' + super.getName();
+  }
+ 
+}
+let car = new Car('Tesla');
+console.log(car.getName()); // It is a car: Tesla
+console.log(car.getType()); // car
+
+```
 
 ```javascript
 var obj = { a: 1 };
