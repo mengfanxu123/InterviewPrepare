@@ -77,5 +77,7 @@
   * [973. K Closest Points to Origin](amazon/coding-question/untitled.md)
   * [23. Merge k Sorted Lists](amazon/coding-question/23.-merge-k-sorted-lists.md)
   * [Tree:](amazon/coding-question/tree.md)
+  * [540. Single Element in a Sorted Array](amazon/coding-question/540.-single-element-in-a-sorted-array.md)
+  * [word search II && I](amazon/coding-question/word-search.md)
 * [Untitled](amazon/untitled-1.md)
 
