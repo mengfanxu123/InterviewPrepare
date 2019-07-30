@@ -153,9 +153,21 @@ doSometing()
 .catch(failureCallback)
 ```
 
-### Composition
+### How To Use promise ALL
 
-Promise.resolve\(\) and Promise.rejcet\(\) are shortcut to manually create an already resolved or rejected promise respectively
+```javascript
+var p1 = Promise.resolve(3);
+var p2 = 1337;
+var p3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("foo");
+  }, 100);
+}); 
+
+Promise.all([p1, p2, p3]).then(values => { 
+  console.log(values); // [3, 1337, "foo"] 
+});
+```
 
 We can start operations in parallel and wait for them to finished 
 
@@ -359,4 +371,8 @@ var fun = new Toy('robot', 40);
 1. The splice\(\) method returns the removed item\(s\) in an array and slice\(\) method returns the selected element\(s\) in an array, as a new array object.
 2. The splice\(\) method changes the original array and slice\(\) method doesn’t change the original array.
 3. The splice\(\) method can take n number of arguments and slice\(\) method takes 2 arguments.
+
+
+
+JavaScript中有三个可以对字符串编码的函数，分别是： escape,encodeURI,encodeURIComponent，相应3个解码函数：unescape,decodeURI,decodeURIComponent 。
 

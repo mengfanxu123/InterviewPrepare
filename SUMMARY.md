@@ -61,7 +61,7 @@
 * [Intervew Company](codding/intervew-company.md)
 * [Project](codding/untitled/README.md)
   * [project structure](codding/untitled/project-structure.md)
-  * [project detail](codding/untitled/project-detail.md)
+  * [project detail and Design](codding/untitled/project-detail.md)
 * [Coding during interview](codding/untitled-1/README.md)
   * [add\(a, b\) add\(a\)\(b\) add\(a\)\(b\)\(\)](codding/untitled-1/untitled.md)
   * [implement the map function](codding/untitled-1/implement-the-map-function.md)
