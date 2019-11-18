@@ -41,8 +41,7 @@ set parent element display: flex
 
 #### perfect centering
 
-{% code-tabs %}
-{% code-tabs-item title="center div" %}
+{% code title="center div" %}
 ```css
 .outer {
     display: flex;
@@ -59,8 +58,7 @@ set parent element display: flex
 }
 
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ```css
 .outer {

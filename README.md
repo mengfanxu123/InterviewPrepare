@@ -8,8 +8,7 @@ Hyper Text Markup Language
 
 #### List 
 
-{% code-tabs %}
-{% code-tabs-item title="HTML list" %}
+{% code title="HTML list" %}
 ```markup
 <ul>
     <li>Coffe</li>
@@ -24,8 +23,7 @@ Hyper Text Markup Language
 </ol>
 
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 #### Table
 
@@ -67,8 +65,7 @@ table, th, td {
 * Graphics: &lt;canvas&gt; &lt;svg&gt;
 * new media elements: &lt;audio&gt; &lt;video&gt;
 
-{% code-tabs %}
-{% code-tabs-item title="datalist" %}
+{% code title="datalist" %}
 ```markup
 <form>
     <input list = "browser" name = "browser">
@@ -80,8 +77,7 @@ table, th, td {
     <input type = "submit">
 </form>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ### Attribute vs Property
 
@@ -102,8 +98,7 @@ Attribute are defined on the HTML but property defined on the DOM
 | capacity | 4kb | 5mb | 5mb |
 | accessibility | any window | any window | same tab |
 
-{% code-tabs %}
-{% code-tabs-item title="localStorage" %}
+{% code title="localStorage" %}
 ```markup
 
 <html>
@@ -124,8 +119,7 @@ if (typeof(Storage) !== "undefined") {
 </html>
 
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Form Validation
 

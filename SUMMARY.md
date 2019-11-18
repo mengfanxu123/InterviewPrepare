@@ -80,4 +80,10 @@
   * [540. Single Element in a Sorted Array](amazon/coding-question/540.-single-element-in-a-sorted-array.md)
   * [word search II && I](amazon/coding-question/word-search.md)
 * [Untitled](amazon/untitled-1.md)
+* [Untitled](untitled-5.md)
+
+## oracle
+
+* [BQ](oracle/bq.md)
+* [leetcode](oracle/leetcode.md)
 

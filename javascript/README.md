@@ -103,8 +103,7 @@ a promise object will either successes or fail
 
 promised all : return a single promise that resolves when all of the promise in argument have solved or when the outterable argument contains no promises
 
-{% code-tabs %}
-{% code-tabs-item title="Promise" %}
+{% code title="Promise" %}
 ```javascript
 function printString(string){
     return new Promise((resolve, reject)=>{
@@ -138,8 +137,7 @@ asyncDouble(3)
     error =>console.log(error);
     )
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ### How to use promise chain
 

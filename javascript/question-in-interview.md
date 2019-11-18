@@ -9,16 +9,14 @@
 
 * server side validation
 
-{% code-tabs %}
-{% code-tabs-item title="build-in validation" %}
+{% code title="build-in validation" %}
 ```markup
 <form>
 <input type="text" id="choose" name="ilike" required/>
 <button>submit</button>
 </form>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ```css
 input : invalid {
