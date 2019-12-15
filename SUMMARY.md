@@ -80,7 +80,8 @@
   * [540. Single Element in a Sorted Array](amazon/coding-question/540.-single-element-in-a-sorted-array.md)
   * [word search II && I](amazon/coding-question/word-search.md)
 * [Untitled](amazon/untitled-1.md)
-* [Untitled](untitled-5.md)
+* [JS 题型](untitled-5/README.md)
+  * [经典题目](untitled-5/jing-dian-ti-mu.md)
 
 ## oracle
 

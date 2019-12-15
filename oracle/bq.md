@@ -2,7 +2,7 @@
 
 1. background and introduction yourself
 
-My name is Mandy, now I am working on Walmart labs as front end software engineer, our team is image audit tools to helper Walmart to simplify the process of image audit in Walmart website category images .My proficient in HTML5 CSS3 Redct Reudx 
+My name is Mandy, now I am working on Walmart labs as front end software engineer, our team is develop internal image audit tools to helper Walmart to simplify the process of category image audit  .Our front end team technological stack is React Redux and I am proficient in javascript java  HTML5 CSS3 Redct Redux 
 
 I got my master degree in NEU my major is computer engineer. I graduated at last year Dec and I have almost one year work experiences 
 

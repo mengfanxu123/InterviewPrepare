@@ -13,3 +13,11 @@ console.log(array1.concat(array2));
 
 ```
 
+### Array sort
+
+Array sort is sort by aphbbate , not num order so use customer array
+
+```javascript
+num.sort((a, b)=>a-b)
+```
+

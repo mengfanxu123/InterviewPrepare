@@ -11,22 +11,40 @@
 
 #### Mount:
 
-* Constructor: call super props and set up state only call once when the component set up
-* Static getDerivedStateFromProps\(\): keep the state synced with incoming props, this method is safe to replacement of componentwillRecevieProps
-* Render\(\) prepare and structure you JSX
-* ComponentDidMount\(\) cause side effect\(Http request\)
+* **Constructor:** call super props and set up state only call once when the component set up
+* initial local state by this.state and binding event handler methods to an instance
+* **Static getDerivedStateFromProps\(\):** keep the state synced with incoming props, this method is safe to replacement of componentwillRecevieProps
+* **Render\(\)** prepare and structure you JSX
+* **ComponentDidMount\(\)** cause side effect\(Http request\)：`componentDidMount()` is invoked immediately after a component is mounted \(inserted into the tree\). Initialization that requires DOM nodes should go here. If you need to load data from a remote endpoint, this is a good place to instantiate the network request.Update
 
 ### Update
 
-* Static getDerivedStateFromProps\(props, state\) syn state to props
-* ShouldComponentUpdate\(nextProps, state\) decide whether continuing or not, may cancel update process
-* Render\(\) 
+* **Static getDerivedStateFromProps\(props, state\)** syn state to props
+* **ShouldComponentUpdate\(nextProps, state\)** decide whether continuing or not, may cancel update process: not call for initial render and get network request and 
+
+```javascript
+componentDidUpdate(prevProps) {
+  // Typical usage (don't forget to compare props):
+  if (this.props.userID !== prevProps.userID) {
+    this.fetchData(this.props.userID);
+  }
+}
+```
+
+* **Render\(\)** 
 * getSnapshotBeforeUpdate\(\): replace componentwillUpdate: new component update in DOM. To keep the third party library UI in acy with every update
-* componentDidUpdate\(\): cause side effect
+* **componentDidUpdate\(\)**: cause side effect
 
 ### Unmount:
 
-* componentwillUnmount\(\) :  remove from DOM. DOM document object model the DOM represents the document as a node or object, programing language can connect to the page
+* **componentwillUnmount\(\)** :  remove from DOM. DOM document object model the DOM represents the document as a node or object, programing language can connect to the page
+
+### Error Handing
+
+* [`static getDerivedStateFromError()`](https://reactjs.org/docs/react-component.html#static-getderivedstatefromerror)
+*   * [`componentDidCatch()`](https://reactjs.org/docs/react-component.html#componentdidcatch)
+
+
 
 ### HOC
 
@@ -422,6 +440,12 @@ class welcome extends React.Component{
 ```
 
 1.syntax : function component is plain component and  accept props and return react element class component required extend from react component and 
+
+### forceUpdate 
+
+Calling `forceUpdate()` will cause `render()` to be called on the component, skipping `shouldComponentUpdate()`. This will trigger the normal lifecycle methods for child components, including the `shouldComponentUpdate()` method of each child. React will still only update the DOM if the markup changes.
+
+Normally you should try to avoid all uses of `forceUpdate()` and only read from `this.props` and `this.state` in `render()`.
 
  
 
