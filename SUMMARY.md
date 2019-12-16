@@ -88,3 +88,7 @@
 * [BQ](oracle/bq.md)
 * [leetcode](oracle/leetcode.md)
 
+## algorithm
+
+* [Data Structure](algorithm/data-structure.md)
+
