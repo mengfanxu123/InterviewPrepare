@@ -61,6 +61,26 @@ console.log(add5(2));  // 7
 console.log(add10(2)); // 12
 ```
 
+### Solve Closure issue
+
+```javascript
+for (var i = 0; i <= 5; i++){
+    setTimeout(function timer(){
+        console.log(i);
+    }, i*1000);
+}
+setTimeout is ascy and after for loop finished well print 6, 6, 6, 
+// solve 1. change to let
+// solve 2. use closure
+for (var i = 0; i <= 5; i++){
+    (function(j){
+        setTimeout(function timer(){
+            console.log(i);
+        }, j* 1000);
+    })(i)
+}
+```
+
 Callback Function
 
 The callback function is a function passed into another function as argument, which is then invoked inside the outer function to complete an outer function
@@ -209,14 +229,27 @@ JS is a single thread language and allow js to use promise and callback during t
 
 this has two kinds of event in event Queue, micro and macro micro is settimeout and setinterval, macro is new promise
 
+微任务包括 `process.nextTick` ，`promise` ，`Object.observe` ，`MutationObserver`
+
+宏任务包括 `script` ， `setTimeout` ，`setInterval` ，`setImmediate` ，`I/O` ，`UI rendering`
+
+1. 执行同步代码，这属于宏任务
+2. 执行栈为空，查询是否有微任务需要执行
+3. 执行所有微任务
+4. 必要的话渲染 UI
+5. 然后开始下一轮 Event loop，执行宏任务中的异步代码
+
 ```javascript
-console.log(1)
-setTimeout(() => {  console.log(2)}, 0)
 Promise.resolve().then(() => {	console.log(3)})
 .then(() => {	console.log(4)})console.log(5)
-```
 
-### Prototypal inheritance VS Classical inheritance
+console.log('script start');
+setTimeout(function() { console.log('setTimeout'); }, 0);
+new Promise((resolve) => { console.log('Promise') resolve() }).then(function() { console.log('promise1'); }).then(function() { console.log('promise2'); });
+console.log('script end'); 
+// script start => Promise => script end => promise1 => promise2 => setTimeout
+作者：yck 链接：https://juejin.im/post/5ba34e54e51d450e5162789b 来源：掘金 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。Prototypal inheritance VS Classical inheritance
+```
 
 classical inheritance: a description of the object to be created. Classes inherit from classes and create subclass relationships.
 
@@ -373,4 +406,23 @@ var fun = new Toy('robot', 40);
 
 
 JavaScript中有三个可以对字符串编码的函数，分别是： escape,encodeURI,encodeURIComponent，相应3个解码函数：unescape,decodeURI,decodeURIComponent 。
+
+### `TypeOf and InstanceOf` 
+
+for typeOf javascript data structure
+
+```javascript
+typeof 1 // 'number'
+typeof '1' // 'string'
+typeof undefined // 'undefined'
+typeof true // 'boolean'
+typeof Symbol() // 'symbol'
+typeof b // b 没有声明，但是还会显示 undefined
+typeof [] // 'object'
+typeof {} // 'object'
+typeof console.log // 'function'
+
+```
+
+\`\`
 
