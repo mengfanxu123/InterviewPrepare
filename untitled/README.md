@@ -583,9 +583,9 @@ class NameForm extends React.Component {
 
 ### uncontrolled component/ control component
 
-uncontrolled : form data is handled by a React component
+**controlled** : form data is handled by a React component, An input form element whose value is controlled by React in this way is called a “
 
-controlled component : data is handled by dom itself 
+**controlled component**”.controlled component : data is handled by dom itself 
 
 
 
