@@ -616,5 +616,11 @@ class NameForm extends React.Component {
 }
 ```
 
+CORS is a security mechanism built into \(all\) modern web-browsers \(yes! into your web browser! That’s why your curl calls works fine\). It basically blocks all the http requests from your front end to any API that is not in the same “Origin” \(domain, protocol, and port—which is the case most of the time\).
+
+
+
+{% embed url="https://reactjs.org/docs/state-and-lifecycle.html" %}
+
 
 
