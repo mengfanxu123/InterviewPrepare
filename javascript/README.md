@@ -337,6 +337,42 @@ let car = new Car('Tesla');
 console.log(car.getName()); // It is a car: Tesla
 console.log(car.getType()); // car
 
+
+function Parent(name) {
+    this.parent = name
+}
+Parent.prototype.say = function() {
+    console.log(`${this.parent}: 你打篮球的样子像kunkun`)
+}
+function Child(name, parent) {
+    // 将父类的构造函数绑定在子类上
+    Parent.call(this, parent)
+    this.child = name
+}
+
+/** 
+ 1. 这一步不用Child.prototype =Parent.prototype的原因是怕共享内存，修改父类原型对象就会影响子类
+ 2. 不用Child.prototype = new Parent()的原因是会调用2次父类的构造方法（另一次是call），会存在一份多余的父类实例属性
+3. Object.create是创建了父类原型的副本，与父类原型完全隔离
+*/
+Child.prototype = Object.create(Parent.prototype);
+Child.prototype.say = function() {
+    console.log(`${this.parent}好，我是练习时长两年半的${this.child}`);
+}
+
+// 注意记得把子类的构造指向子类本身
+Child.prototype.constructor = Child;
+
+var parent = new Parent('father');
+parent.say() // father: 你打篮球的样子像kunkun
+
+var child = new Child('cxk', 'father');
+child.say() // father好，我是练习时长两年半的cxk
+
+作者：寻找海蓝96
+链接：https://juejin.im/post/5d51e16d6fb9a06ae17d6bbc
+来源：掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 ```
 
 ```javascript
@@ -391,9 +427,36 @@ function Toy(name, price) {
 var cheese = new Food('feta', 5);
 var fun = new Toy('robot', 40);
 
+// implment call
+function.prototype.call2 = function(content = window){
+content.fn = this;
+  let args = [...arguments].slice();
+  let result = content.fn(..args);
+  delete content;
+  return result;
+}
+let foo = {
+  value: 1
+}
+function bar(name, age){
+  console.log(name);
+  console.log(age);
+  console.log(this.value);
+}
+bar.call2(foo, 'black', '18') // black 18 1
 
-
-
+Function.prototype.apply2 = function(context = window) {
+    context.fn = this
+    let result;
+    // 判断是否有第二个参数
+    if(arguments[1]) {
+        result = context.fn(...arguments[1])
+    } else {
+        result = context.fn()
+    }
+    delete context.fn
+    return result
+}
 
 ```
 
@@ -427,4 +490,59 @@ typeof console.log // 'function'
 ### **webpack**
 
 At its core, **webpack** is a _static module bundler_ for modern JavaScript applications. When webpack processes your application, it internally builds a [dependency graph](https://webpack.js.org/concepts/dependency-graph/) which maps every module your project needs and generates one or more _bundles_.
+
+### Debouncing
+
+```javascript
+function debounce(fn,wait=50,immediate) {
+    let timer;
+    return function() {
+        if(immediate) {
+            fn.apply(this,arguments)
+        }
+        if(timer) clearTimeout(timer)
+        timer = setTimeout(()=> {
+            fn.apply(this,arguments)
+        },wait)
+    }
+    
+function realFunc(){
+    console.log("Success");
+}
+
+// 采用了防抖动
+window.addEventListener('scroll',debounce(realFunc,500));
+// 没采用防抖动
+window.addEventListener('scroll',realFunc);
+
+```
+
+### implement Map forEach Reduce
+
+```javascript
+Array.prototype.myEach = function(callback){
+    for (let i = 0; i < this.length; i++){
+        callback(this[i], i, this);
+    }
+}
+
+Array.prototype.myMap = function(callback){
+    arr = [];
+    for (let i = 0; i < this.length; i++){
+        arr.push(callback(this[i], i, this))
+    }
+}
+
+Array.prototype.myReduce = function(callback, initialVal){
+    var accumular = (initialVal === undefined) undefined : initalVal;
+    for (var i = 0; i < this.length; i++){
+        if(accumulator !== undefined){
+            accumlator = callback.call(undefined, accumulator, this[i], this);
+        } else{
+            accumulator = this[i];
+        }
+        return accumulator;
+    }
+}
+```
 
