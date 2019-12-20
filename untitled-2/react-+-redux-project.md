@@ -214,7 +214,12 @@ export function removeMovieFromMyList(id) {
     id: id
   };
 }
-
+export const removeMovieFromMyList = payload => {
+  return {
+    type : "ROMVE",
+    payload
+  }
+}
 export function addMovieToMyList(id) {
   return {
     type: "ADD_TO_MYLIST",
