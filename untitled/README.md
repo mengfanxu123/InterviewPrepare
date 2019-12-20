@@ -352,7 +352,7 @@ render(){
 
 
 
-```text
+```javascript
 function ActionLink() {
   function handleClick(e) {
     e.preventDefault();
@@ -475,7 +475,7 @@ class Greeting extends React.Component{
 
 \*\*\*\*
 
-```text
+```javascript
 export function foo() { console.log('foo') }
 export function bar() { console.log('bar') }
 export function baz() { foo(); bar() }
@@ -507,7 +507,7 @@ bar()
 
 A class should have one and only one reason to change, meaning that a class should only have one job.
 
-```text
+```javascript
 const circle = (radius) => {
   const proto = { 
     type: 'Circle',

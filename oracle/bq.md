@@ -14,5 +14,19 @@ I got my master degree in NEU my major is computer engineer. I graduated at last
 
 
 
+current project
+
+Our teams belong to Catalog, our team' s application is used for company to audit website content include productions image and description. walmart content audit team can direcly upload  item template and use application to track item status, audit and quality check image. before they use it, they just do all tasks manually use excel 
+
+our teams has 12 engineer 2PM and 1 UX designer, for front end, our application base on react, redux use js server side used node js
+
+we also do unit test and end to end automation test 
+
+
+
+  
+
+
+
 
 
