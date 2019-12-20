@@ -156,6 +156,23 @@ asyncDouble(3)
     date =>console.log(data);
     error =>console.log(error);
     )
+    
+var promise1 = new Promise(function(resolve, reject) {
+  setTimeout(function() {
+    resolve('foo');
+  }, 300);
+});
+
+promise1.then(function(value) {
+  console.log(value);
+  // expected output: "foo"
+});
+
+console.log(promise1);
+// expected output: [object Promise]
+
+//类似于new Promise((resolve, reject) => resolve(“hi”))
+
 ```
 {% endcode %}
 
@@ -545,4 +562,141 @@ Array.prototype.myReduce = function(callback, initialVal){
     }
 }
 ```
+
+### flatten nested array
+
+```javascript
+const data = [
+  [1, 2, 3],
+  [4, [5], 6],
+  [7, 8, 9]
+];
+
+const flattenArray = data => {
+  let res = [];
+  data.forEach(ele => {
+    if(Array.isArray(ele)){
+      res.push(...flatten(ele));
+    }else res.push(ele);
+  }) 
+}
+
+const flattenArray = data => {
+  return data.reduce((acc, cur) => {
+    return acc.concat(
+      Array.isArray(cur) ? flattenArray(cur) : cur;
+    );
+  }, []);
+}
+```
+
+### flatten nested object
+
+```javascript
+function flattenObj(obj, parent, res = {}) {
+  for (let key in obj) {
+    let propName = parent ? parent + "." + key : key;
+    if (typeof obj[key] == "object") {
+      flattenObj(obj[key], propName, res);
+    } else {
+      res[propName] = obj[key];
+    }
+  }
+  return res;
+}
+
+console.log(flattenObj(d));
+```
+
+### compare two object
+
+```javascript
+input: 
+let a = {
+  tagName: 'parent',
+  textContent: 'haha',
+  children: [
+    {
+      tagName: 'chilren',
+      textContent: 'haha',
+      children: null,
+      className: 'nihaoa',
+      id: '456'
+    }
+  ],
+  className: 'nihao',
+  id: '123'
+};
+let c = {
+  tagName: 'parent',
+  textContent: 'haha',
+  children: [
+    {
+      tagName: 'chilren',
+      textContent: 'haha',
+      children: null,
+      className: 'nihaoa',
+      id: '456'
+    }
+  ],
+  className: 'nihao',
+  id: '123'
+};
+
+//answer
+const compare = (a, b) => {
+  for (const key in a) {
+    if (Array.isArray(a[key]) && Array.isArray(b[key])) {
+      for (let i = 0; i < a[key].length; i++) {
+        if (compare(a[key][i], b[key][i]) === false) return false;
+      }
+    } else {
+      if (a[key] !== b[key]) return false;
+    }
+  }
+  return true;
+};
+```
+
+## **remove the duplicate element in array**
+
+```javascript
+array.filter((item, index) =>{
+  return array.indexOf(item) === index
+});
+
+//retrive duplicated values
+
+array.filter((item, index) =>{
+  return array.indexOf(item) !== index
+});
+
+array.reduce((unique, item) => {
+  return unique.includes(item) ? unique : [...unique, item]
+}, []);
+```
+
+## **return a promise and combine into a new object and add it into promise**
+
+```javascript
+const promise = (obj) => {
+   return new Promise((resolve => {
+     setTimeout(() => {
+       resolve(obj);
+     }, 0);
+   }))
+ }
+
+ const wait = async () => {
+   const val1 = await promise({a: 1});
+   const val2 = await promise({b: 2});
+   return await promise({...val1, ...val2});
+ }
+
+ wait().then((data) => {
+   console.log(data);
+ }) // {a: 1, b: 2}
+```
+
+
 

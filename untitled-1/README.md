@@ -140,9 +140,9 @@ set parent element display: flex
 ### [P](https://codepen.io/mengfanxu123/pen/qGGZZO)osition
 
 * static : default position
-* relative: is positioned relative to its normal position, adjust away from its normal position 
-* fixed: positioned relative to the view point, always stay in same place even if the page is scrolled
-* absolute: is positioned relative to the nearest positioned ancestor 
+* relative: **is positioned relative to its normal position**, adjust away from its normal position 
+* fixed: **positioned relative to the view point**, always stay in same place even if the page is scrolled
+* absolute: is positioned relative to the **nearest positioned ancestor** 
 * sticky: is positioned based on the user's scroll position. Between relative and fixed
 
 ### Responsive Design
