@@ -4,7 +4,15 @@
 
 JavaScript is a high-level, interpreted programming language
 
-### ES6 New Feature
+###  JS event loop
+
+![](../.gitbook/assets/screen-shot-2019-12-31-at-6.01.41-am.png)
+
+​
+
+The Event Loop has one simple job — to monitor the Call Stack and the Callback Queue. If the Call Stack is empty, it will take the first event from the queue and will push it to the Call Stack, which effectively runs it.S6 New Feature
+
+### ES6
 
 * Let Const
 * Class
