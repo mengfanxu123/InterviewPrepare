@@ -361,3 +361,91 @@ function deepCopy(obj){
 
 ```
 
+
+
+### compare two objects\(Amazon\)
+
+```javascript
+input: 
+let a = {
+  tagName: 'parent',
+  textContent: 'haha',
+  children: [
+    {
+      tagName: 'chilren',
+      textContent: 'haha',
+      children: null,
+      className: 'nihaoa',
+      id: '456'
+    }
+  ],
+  className: 'nihao',
+  id: '123'
+};
+let c = {
+  tagName: 'parent',
+  textContent: 'haha',
+  children: [
+    {
+      tagName: 'chilren',
+      textContent: 'haha',
+      children: null,
+      className: 'nihaoa',
+      id: '456'
+    }
+  ],
+  className: 'nihao',
+  id: '123'
+};
+
+//answer
+const compare = (a, b) => {
+  for (const key in a) {
+    if (Array.isArray(a[key]) && Array.isArray(b[key])) {
+      for (let i = 0; i < a[key].length; i++) {
+        if (compare(a[key][i], b[key][i]) === false) return false;
+      }
+    } else {
+      if (a[key] !== b[key]) return false;
+    }
+  }
+  return true;
+};
+```
+
+version2
+
+```javascript
+ //判断是否是对象或者是数组
+  function isObject(obj) {
+    return typeof obj === 'object' && obj !== null
+  }
+
+  //全相等
+  function isEqual(obj1, obj2) {
+    if (!isObject(obj1) || !isObject(obj2)) {
+      //值类型(参与equal的一般不会是函数)
+      return obj1 === obj2;
+    }
+    //传入的两个object都是一样的引用地址值
+    if (obj1 === obj2) {
+      return true;
+    }
+    //两个都是对象或者数组，而且不相等
+    //先取出obj1 和obj2的keys，比较个数
+    const obj1keys = Object.keys(obj1);
+    const obj2keys = Object.keys(obj2);
+    if (obj1keys.length !== obj2keys.length) {
+      return false;
+    }
+    //以obj1为基准 对obj2 一次递归遍历
+    for (let key in obj1) {
+      const res = isEqual(obj1[key], obj2[key]);
+      if (!res) {
+        return false;
+      }
+    }
+    return true;
+  }
+```
+
