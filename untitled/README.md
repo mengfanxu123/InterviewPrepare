@@ -20,7 +20,7 @@
 ### Update
 
 * **Static getDerivedStateFromProps\(props, state\)** syn state to props
-* **ShouldComponentUpdate\(nextProps, state\)** decide whether continuing or not, **may cancel update process: not call for initial render and get network request and** 
+* **ShouldComponentUpdate\(nextProps, state\) decide whether continuing or not, may cancel update process: not call for initial render and get network request and** 
 
 ```javascript
 componentDidUpdate(prevProps) {
@@ -33,6 +33,44 @@ componentDidUpdate(prevProps) {
 
 * **Render\(\)** 
 * getSnapshotBeforeUpdate\(\): replace componentwillUpdate: new component update in DOM. To keep the third party library UI in acy with every update
+
+```jsx
+class ScrollingList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.listRef = React.createRef();
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    // Are we adding new items to the list?
+    // Capture the scroll position so we can adjust scroll later.
+    if (prevProps.list.length < this.props.list.length) {
+      const list = this.listRef.current;
+      return list.scrollHeight - list.scrollTop;
+    }
+    return null;
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // If we have a snapshot value, we've just added new items.
+    // Adjust scroll so these new items don't push the old ones out of view.
+    // (snapshot here is the value returned from getSnapshotBeforeUpdate)
+    if (snapshot !== null) {
+      const list = this.listRef.current;
+      list.scrollTop = list.scrollHeight - snapshot;
+    }
+  }
+
+  render() {
+    return (
+      <div ref={this.listRef}>{/* ...contents... */}</div>
+    );
+  }
+}
+```
+
+
+
 * **componentDidUpdate\(\)**: cause side effect
 
 ### Unmount:
