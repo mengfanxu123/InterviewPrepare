@@ -15,12 +15,12 @@
 * initial local state by this.state and binding event handler methods to an instance
 * **Static getDerivedStateFromProps\(\):** keep the state synced with incoming props, this method is safe to replacement of componentwillRecevieProps
 * **Render\(\)** prepare and structure you JSX
-* **ComponentDidMount\(\)** cause side effect\(Http request\)：`componentDidMount()` is invoked immediately after a component is mounted \(inserted into the tree\). Initialization that requires DOM nodes should go here. If you need to load data from a remote endpoint, this is a good place to instantiate the network request.Update
+* **ComponentDidMount\(\)** cause side effect\(Http request\)：`componentDidMount()` is invoked immediately after a component is mounted \(inserted into the tree\). Initialization that requires DOM nodes should go here. I**f you need to load data from a remote endpoint, this is a good place to instantiate the network request.Update**
 
 ### Update
 
 * **Static getDerivedStateFromProps\(props, state\)** syn state to props
-* **ShouldComponentUpdate\(nextProps, state\)** decide whether continuing or not, may cancel update process: not call for initial render and get network request and 
+* **ShouldComponentUpdate\(nextProps, state\)** decide whether continuing or not, **may cancel update process: not call for initial render and get network request and** 
 
 ```javascript
 componentDidUpdate(prevProps) {
@@ -220,7 +220,7 @@ render\(\) many times
 
 ### Elements vs Component 
 
-elements: elements are the smallest building blocks of react apps. React elements are plain object, and are cheap to create
+elements: **elements are the smallest building blocks of react apps. React elements are plain object, and are cheap to create**
 
 to render a React element into a root DOM node, pass both to ReactDOM.render\(\). typical elements are not used directly, but get returned form component
 
