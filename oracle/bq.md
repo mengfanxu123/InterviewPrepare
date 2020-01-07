@@ -1,26 +1,16 @@
 # BQ
 
-1. background and introduction yourself
+Hi My name is Mandy, I am now working in Walmart Labs as front end software engineer, I have 1 year full time work experience and I am very proficient in different kinds of programming language and web framework such as redux and react
 
-My name is Mandy, now I am working on Walmart labs as front end software engineer, our team is develop internal image audit tools to helper Walmart to simplify the process of category image audit  .Our front end team technological stack is React Redux and I am proficient in javascript java  HTML5 CSS3 Redct Redux 
+our team in Walmart belong to Catalog, our team response to develop interval content audit tool to help Walmart improve content audit work flow and help content audit progress more efficiency. 
 
-I got my master degree in NEU my major is computer engineer. I graduated at last year Dec and I have almost one year work experiences 
+Our team front end tec stack is JS use react redux base on electrode 
 
-2, Why orcale
+use this tool can directly upload production template and audit and quality check every detail and download it instead of manually audit use excel 
 
-1. First of all, I very interested in Oracle, when I finished my master degree I already applied many Oracle Positions, but never be selected, so I often check and take care about orcale website
-2. I am very interested in cloud service technology, I think Oracle OCI maybe is a better place to improve my job career 
-3. I am a front end guys, very famailor work with PM and UX, so I think this job is very suitable with me
+My work is according UX designer  mocks and Manger and PM requirements and use backend API implement different function which can display it in website , I also do some unit test and e2e automation
 
 
-
-current project
-
-Our teams belong to Catalog, our team' s application is used for company to audit website content include productions image and description. walmart content audit team can direcly upload  item template and use application to track item status, audit and quality check image. before they use it, they just do all tasks manually use excel 
-
-our teams has 12 engineer 2PM and 1 UX designer, for front end, our application base on react, redux use js server side used node js
-
-we also do unit test and end to end automation test 
 
 
 
