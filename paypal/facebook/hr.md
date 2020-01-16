@@ -45,6 +45,11 @@ given, a list of elements held by numeric index.
 given, an object with fields with Names and type+value,  
 some like to think of it as "Associative Array". but are not arrays, in their representation.
 
+### Why facebook
+
+1. first facebook is very famous company, I think everyone use facebook productions such as facebook and ins everyday, if I have a chance to join company, I can contribute myself to different kinds of production, I think for me is an fantastic experience, as software engineer, my passion is helper people life more easier
+2. facebook also has many talent people and talent engineer, I really want to learn from them. for my side, I think I am young, we should learn more when we start our career. I think facebook's work may have more challenge 
+
 
 
 

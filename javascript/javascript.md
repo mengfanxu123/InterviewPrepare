@@ -21,5 +21,50 @@ Array sort is sort by aphbbate , not num order so use customer array
 num.sort((a, b)=>a-b)
 ```
 
+### DeepCopy and shallowCopy
 
+how to deepCopy and not change original data
+
+* JOSN.parse\(JSON.stringify\(a\)\);
+* Lodash
+
+```javascript
+var objects = [{ 'a': 1 }, { 'b': 2 }];
+ 
+var deep = _.cloneDeep(objects);
+console.log(deep[0] === objects[0]);
+```
+
+```javascript
+function isObj(obj) {
+    return (typeof obj === 'object' || typeof obj === 'function') && obj !== null
+}
+
+function deepCopy(obj, hash = new WeakMap()) {
+    if(hash.has(obj)) return hash.get(obj)
+    let cloneObj = Array.isArray(obj) ? [] : {}
+    hash.set(obj, cloneObj)
+    for (let key in obj) {
+        cloneObj[key] = isObj(obj[key]) ? deepCopy(obj[key], hash) : obj[key];
+    }
+    return cloneObj
+}
+
+function deepCopy(obj){
+    //判断是否是简单数据类型，
+    if(typeof obj == "object"){
+        //复杂数据类型
+        var result = obj.constructor == Array ? [] : {};
+        for(let i in obj){
+            result[i] = typeof obj[i] == "object" ? deepCopy(obj[i]) : obj[i];
+        }
+    }else {
+        //简单数据类型 直接 == 赋值
+        var result = obj;
+    }
+    return result;
+}
+
+
+```
 

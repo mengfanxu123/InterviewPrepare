@@ -6,7 +6,7 @@ Redux is an open source library to manage application state. all state kept in a
 
 ### JSX
 
-JSX is a **syntax** extension to JavaScript. It is similar to a template language, but it has full power of JavaScript. JSX gets compiled to `React.createElement()` calls which return plain JavaScript objects called “React elements”.
+JSX is a syntax extension to JavaScript. It is similar to a template language, but it has full power of JavaScript. JSX gets compiled to `React.createElement()` calls which return plain JavaScript objects called “React elements”.
 
 ### Synthetic Event
 
@@ -23,7 +23,7 @@ React - react data Flow
 1. The user clicks a button in the app and a component prop is called like a function
 2. the corresponding container dispatches an action. This happened the prop is tied to an action dispatcher using **mapDispatchToprops** 
 3. A reducer "hears actions and run a function which returns a new state with specific modifications
-4. The container knows that state has changed and modifies a specific prop in component as result of **mapStateToprops** function
+4. The container knows that state has changed and modifies a specific prop in component as result of mapStateToprops function
 5. The component has a props has officially changed due to a new state being genegerated, so if state is responsibe for any UI, the user will see it change
 
 ### 3 Fundamentals
