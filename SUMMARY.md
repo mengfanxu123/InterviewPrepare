@@ -98,8 +98,9 @@
 
 ## paypal
 
-* [facebook](paypal/untitled/README.md)
-  * [HR](paypal/untitled/hr.md)
+* [facebook](paypal/untitled.md)
+* [facebook](paypal/facebook/README.md)
+  * [HR](paypal/facebook/hr.md)
 
 ## facebook
 
