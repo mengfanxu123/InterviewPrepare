@@ -4,21 +4,21 @@
 
 for example : use inside a function, often refer to single object 
 
-### Apply and Call,
+### Apply and Call:
 
 when we call Apply can Call, we can specific this reference with call or apply function
 
 different pass arguments is different : call accept all parameter individual and apply allow pass a array as parameter
 
-### Closure 
+### Closure: 
 
 closure : inside function can access outside function variable   
 
 ### onLoad:
 
-use function onload to test html image load 
+use function on-load to test html image load 
 
-onload is most often used within the  element to execute a script once a web page has completely loaded all content \(including images, script files, CSS files, etc.\). However, it can be used on other elements as well \(see "Supported HTML tags" below\).
+unload is most often used within the  element to execute a script once a web page has completely loaded all content \(including images, script files, CSS files, etc.\). However, it can be used on other elements as well \(see "Supported HTML tags" below\).
 
 ### Queue vs Stack
 
