@@ -6,6 +6,7 @@
 * [JavaScript](javascript/README.md)
   * [JavaScript](javascript/javascript.md)
   * [question in interview](javascript/question-in-interview.md)
+  * [Javascript DOM](javascript/javascript-dom.md)
 * [React](untitled/README.md)
   * [React Router](untitled/react-router.md)
   * [React Hooks](untitled/react-hooks.md)

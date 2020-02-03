@@ -168,30 +168,5 @@ An element with greater stack order is always in front of an element with a lowe
 
 **Note:** `z-index` only works on positioned elements \(position: absolute, position: relative, position: fixed, or position: sticky\).
 
-### combine selectors
-
-
-
-```javascript
-Selector	Example	Example description
-element element	div p	Selects all <p> elements inside <div> elements
-element>element	div > p	Selects all <p> elements where the parent is a <div> element
-element+element	div + p	Selects all <p> elements that are placed immediately after <div> elements
-element1~element2	p ~ ul	Selects every <ul> element that are preceded by a <p> element
-```
-
-### Nav bar 
-
-{% embed url="https://codepen.io/mengfanxu123/pen/QWweNgv" %}
-
-### CSS overflow
-
-
-
-* `visible` - Default. The overflow is not clipped. The content renders outside the element's box
-* `hidden` - The overflow is clipped, and the rest of the content will be invisible
-* `scroll` - The overflow is clipped, and a scrollbar is added to see the rest of the content
-* `auto` - Similar to `scroll`, but it adds scrollbars only when necessary
-
 
 
