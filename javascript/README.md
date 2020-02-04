@@ -67,27 +67,6 @@ var add10 = makeAdder(10);
 
 console.log(add5(2));  // 7
 console.log(add10(2)); // 12
-
-var add = (function() {
-  var counter = 0;
-  console.log(counter);
-  return function() {
-    console.log(counter, "inner function");
-    counter += 1;
-    return counter;
-  };
-})();
-
-console.log(add());
-console.log(add());
-// inner function will call once
-//The self-invoking function only runs once. It sets the counter to zero (0), and returns a function expression.
-
-//This way add becomes a function. The "wonderful" part is that it can access the counter in the parent scope.
-
-//This is called a JavaScript closure. It makes it possible for a function to have "private" variables.
-
-//The counter is protected by the scope of the anonymous function, and can only be changed using the add function.
 ```
 
 ### Solve Closure issue
