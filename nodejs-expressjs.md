@@ -4,8 +4,8 @@
 
 * Create - post
 * Read-get
-* Update-put
-* Delete-Delete
+* Upd**ate-put**
+* **Delete-Delete**
 
 ### HTTP Status Code
 
