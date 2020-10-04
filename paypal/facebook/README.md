@@ -71,8 +71,26 @@
     <tr>
       <td style="text-align:left">
         <p></p>
-        <ol></ol>
+        <ol>
+          <li>
+            <p>two idential DOM trees</p>
+            <p>Given 2 identical DOM trees (but not equal) and one element of the first
+              DOM tree, how would you find this element in the second DOM tree?</p>
+          </li>
+          <li>
+            <p>exclude key</p>
+            <p>Given input: // could be potentially more than 3 keys in the object above
+              items = [ {color: &apos;red&apos;, type: &apos;tv&apos;, age: 18}, {color:
+              &apos;silver&apos;, type: &apos;phone&apos;, age: 20} ... ] excludes =
+              [ {k: &apos;color&apos;, v: &apos;silver&apos;}, {k: &apos;type&apos;,
+              v: &apos;tv&apos;}, .... ] function excludeItems(items, excludes) { excludes.forEach(pair
+              =&gt; { items = items.filter(item =&gt; item[pair.k] === item[pair.v]);
+              }); return items; } 1. Describe what this function is doing... 2. What
+              is wrong with that function ? 3. How would you optimize it ?</p>
+          </li>
+        </ol>
       </td>
     </tr>
   </tbody>
 </table>
+

@@ -282,3 +282,15 @@ console.log(map1.get('bar'));
 console.log(map1.get('baz'));
 ```
 
+### what is constructor
+
+when we new Object or class, initial, constructor will be call 
+
+### Null and undefined
+
+unedfined: variable is clarify, but not assign a value;
+
+null : **variable** is clarify assign a value is null
+
+
+

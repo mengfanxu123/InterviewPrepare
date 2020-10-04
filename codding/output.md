@@ -160,7 +160,9 @@ console.log("Through gettor: " +
     </tr>
   </thead>
   <tbody></tbody>
-</table>**A.     It will output Yey! when the web page is loaded, but before external resources like images are downloaded to ≠ user's machine.**
+</table>
+
+**A.     It will output Yey! when the web page is loaded, but before external resources like images are downloaded to ≠ user's machine.**
 
 **B.     It will output Yey! when the user hits the Reload browser button.**
 

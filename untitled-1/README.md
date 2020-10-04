@@ -168,5 +168,38 @@ An element with greater stack order is always in front of an element with a lowe
 
 **Note:** `z-index` only works on positioned elements \(position: absolute, position: relative, position: fixed, or position: sticky\).
 
+### combine selectors
 
+
+
+```javascript
+Selector	Example	Example description
+element element	div p	Selects all <p> elements inside <div> elements
+element>element	div > p	Selects all <p> elements where the parent is a <div> element
+element+element	div + p	Selects all <p> elements that are placed immediately after <div> elements
+element1~element2	p ~ ul	Selects every <ul> element that are preceded by a <p> element
+```
+
+### Nav bar 
+
+{% embed url="https://codepen.io/mengfanxu123/pen/QWweNgv" %}
+
+### CSS overflow
+
+
+
+* `visible` - Default. The overflow is not clipped. The content renders outside the element's box
+* `hidden` - The overflow is clipped, and the rest of the content will be invisible
+* `scroll` - The overflow is clipped, and a scrollbar is added to see the rest of the content
+* `auto` - Similar to `scroll`, but it adds scrollbars only when necessary
+
+### Position
+
+
+
+* `static`
+* `relative: it ralete to it noraml postion`
+* `fixed:` s positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.
+* `absolute:` is positioned relative to the nearest positioned ancestor \(instead of positioned relative to the viewport, like fixed\).
+* `sticky`
 

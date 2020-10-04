@@ -1088,5 +1088,24 @@ function objectFactory() {
 
 ```
 
+declare global variable : use window value, or var 
 
+
+
+**difference between for loop and while loop: know array length and while not know loop length and just know condition** 
+
+
+
+**Do you know error first function in NodeJs**
+
+The “**Error first callback**” is used to pass an error and data. The first argument to these functions is an error object and the second argument represents to the success data. So, you can check the first argument as an error object and the second argument as data. If nothing wrong happen in your app use data.
+
+
+
+```text
+let a = 1;
+let b = 2;
+
+[a, b] = [b, a];
+```
 
