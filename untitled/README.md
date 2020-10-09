@@ -623,7 +623,7 @@ class NameForm extends React.Component {
 
 **controlled** : form data is handled by a React component, An input form element whose value is controlled by React in this way is called a “
 
-**controlled component**”.controlled component : data is handled by dom itself 
+**uncontrolled component**”.controlled component : data is handled by dom itself 
 
 
 
