@@ -4,5 +4,11 @@
 
 {% embed url="https://codesandbox.io/s/to-do-list-wlpl2" %}
 
+{% embed url="https://codesandbox.io/s/todolist2-i3fdr" %}
+
+## sorted table + filter \(React\)
+
+{% embed url="https://codesandbox.io/s/sorted-table-and-filter-et3uf" %}
+
 
 
