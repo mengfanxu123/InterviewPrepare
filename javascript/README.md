@@ -138,7 +138,7 @@ function printAll(){
 
 Callback Hell is a problem caused by asynchronous AJAX call, Which means where are mutliple nested callback hell
 
-### Promise
+## Promise
 
 Promise is a function to solve the async issues.
 
@@ -202,8 +202,91 @@ console.log(promise1);
 
 //类似于new Promise((resolve, reject) => resolve(“hi”))
 
+const promise = (flag) => {
+  return new Promise((resolve, reject) => {
+    if (flag !== 0) {
+      resolve("resolve");
+    } else {
+      reject("reject");
+    }
+  });
+};
+
+const callPromise = async () => {
+  promise(1)
+    .then(
+      (res) => {
+        console.log(res);
+        console.log("resolve");
+      },
+      (re) => {
+        console.log(re);
+      }
+    )
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
 ```
 {% endcode %}
+
+### promise questions and understanding
+
+```javascript
+setTimeout(()=>{
+  console.log('setTimeout')
+})
+let p1 = new Promise((resolve)=>{
+  console.log('Promise1')
+  resolve('Promise2')
+})
+p1.then((res)=>{
+  console.log(res)
+})
+console.log(1)
+
+// output : promise1 1 promise2 settimeout 
+//解题思路：这个牵扯到js的执行队列问题，整个script代码，
+//放在了macrotask queue中，执行到setTimeout时会新建一个macrotask queue。
+//但是，promise.then放到了另一个任务队列microtask queue中。
+//script的执行引擎会取1个macrotask queue中的task，执行之。然后把所有microtask queue顺序执行完，再取setTimeout所在的macrotask queue按顺序开始执行。（具体参考www.zhihu.com/question/36…）
+
+Promise.resolve(1)
+    .then((res) => {
+        console.log(res);
+        return 2;
+    })
+    .catch((err) => {
+        return 3;
+    })
+    .then((res) => {
+        console.log(res);
+    });
+
+// out : 1, 2
+// first process res to 1 and return then process 2 next then
+
+const promise = new Promise((resolve, reject) => {
+setTimeout(() => {
+console.log('开始');
+resolve('success');
+}, 5000);
+});
+ 
+const start = Date.now();
+promise.then((res) => {
+console.log(res, Date.now() - start);
+});
+ 
+promise.then((res) => {
+console.log(res, Date.now() - start);
+});
+
+// output 开始 success 5002 sucess 5002 promise cannot be call many time
+// if be caled many times, it will directly give result
+//
+```
 
 ### How to use promise chain
 
