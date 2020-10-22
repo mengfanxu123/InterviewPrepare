@@ -373,7 +373,48 @@ public class Domain {
 }
 ```
 
+## 79 word search
 
+```java
+class Solution {
+    int[][] dirs = new int[][]{{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+    List<int[]> path = new ArrayList<>();
+    public boolean exist(char[][] board, String word) {
+      if(board == null || board.length == 0) return false;
+      boolean[][] visited = new boolean[board.length][board[0].length];
+        for (int i = 0; i < board.length; i++){
+          for (int j = 0; j < board[0].length; j++){
+            if(word.charAt(0) == board[i][j] && visited[i][j] == false){
+              List<int[]> list = new ArrayList<>();
+               if(helper(board, visited, 0, word, i, j, list)) {
+                 for (int[] arr: path){
+                   System.out.println(arr[0] + " " + arr[1]);
+                 }
+                 return true;
+                 }
+            }
+          }
+        }
+      return false;
+    }
+  public boolean helper(char[][] board, boolean[][] visited, int index, String word, int i, int j, List<int[]> list){
+    if(index == word.length()) {
+      path = new ArrayList<>(list); 
+      return true;
+      };
+    if(i < 0 || i >= board.length || j < 0 || j >= board[0].length || visited[i][j] == true || board[i][j] != word.charAt(index) ) return false;
+    visited[i][j] = true;
+   list.add(new int[]{i, j});
+    for (int[] dir : dirs){
+      int x = dir[0] + i;
+      int y = dir[1] + j;
+      if(helper(board, visited, index + 1, word, x, y, list)) return true;
+    }
+    visited[i][j] = false;
+    return false;
+  }
+}
+```
 
 
 

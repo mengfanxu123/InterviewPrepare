@@ -6,7 +6,7 @@ CSS is a language that describes the style of an HTML language
 
 ### Specificity Herarchy
 
-Inline style &gt; id &gt; class , attribute &gt; element
+impart -&gt;Inline style &gt; id &gt; class , attribute &gt; element
 
 ###  Id VS class
 

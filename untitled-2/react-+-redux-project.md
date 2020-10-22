@@ -229,3 +229,9 @@ export function addMovieToMyList(id) {
 
 ```
 
+### My List
+
+{% embed url="https://codesandbox.io/s/laughing-shaw-f9bfx?file=/src/App.jsx" %}
+
+
+
