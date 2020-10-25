@@ -43,15 +43,21 @@ first of all, I learn some course in udamy and read some documents talk about th
 * **In order to meet the milestones, I have to focus on building the main skeleton of the app and prove to the business team that this project is doable otherwise there might be a rick that they will cut the project.**
 * **Finish a working demo with all barebone functions and did a good demo in order to save the project.**
 
+介绍
+
+1, introduction
+
+每天都练习！！！！
+
+练习 第一句要说的慢 深呼吸   
 
 
 
+2。production
 
 
 
-  
-
-
+3。intern
 
 
 

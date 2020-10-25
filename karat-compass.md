@@ -418,5 +418,63 @@ class Solution {
 
 
 
+```java
+public class karat {
+    public static void main(String[] args) {
+        String[] s = new String[] { "1p3acres", "is", "a", "good", "place", "to", "communicate", "mandy", "can", "get",
+                "a", "offer" };
+        List<String> res = warpLine(s, 20);
+        List<String> balanced = balancedWarpLine(res, 20);
+        System.out.println(res);
+        System.out.println(balanced);
+    }
 
+    public static List<String> warpLine(String[] list, int max) {
+        List<String> res = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+        for (String s : list) {
+            if (sb.length() == 0) {
+                sb.append(s);
+            } else if (sb.length() + 1 + s.length() < max) {
+                sb.append("-");
+                sb.append(s);
+            } else {
+                res.add(sb.toString());
+                sb = new StringBuilder();
+                sb.append(s);
+            }
+        }
+        if (sb.length() != 0)
+            res.add(sb.toString());
+        return res;
+    }
+
+    public static List<String> balancedWarpLine(List<String> unbalanced, int max) {
+        List<String> balanced = new ArrayList<>();
+        for (String line : unbalanced) {
+            StringBuilder curLine = new StringBuilder(line);
+            int numNeeded = max - curLine.length();
+            if (!curLine.toString().contains("-")) {
+                balanced.add(curLine.toString());
+                continue;
+            }
+            while (numNeeded > 0) {
+                int i = 0;
+                while (i < curLine.length() - 1) {
+                    if (curLine.charAt(i) == '-' && curLine.charAt(i + 1) != '-') {
+                        curLine.insert(i + 1, '-');
+                        numNeeded--;
+                        i++;
+                        if (numNeeded == 0)
+                            break;
+                    }
+                    i++;
+                }
+            }
+            balanced.add(curLine.toString());
+        }
+        return balanced;
+    }
+}
+```
 
