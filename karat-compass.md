@@ -1,6 +1,6 @@
 # Karat - Compass
 
-find box length
+## find box length
 
 ```javascript
 // 第一问
