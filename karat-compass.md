@@ -416,7 +416,7 @@ class Solution {
 }
 ```
 
-
+## wrap line
 
 ```java
 public class karat {
@@ -474,6 +474,153 @@ public class karat {
             balanced.add(curLine.toString());
         }
         return balanced;
+    }
+}
+```
+
+Badges 
+
+```java
+public class securitySystem {
+    public static void main(String[] args) {
+        String[][] records = { { "Marthaha", "enter" }, { "Martha", "exit" }, { "Paul", "enter" },
+                { "Martha", "enter" }, { "Martha", "exit" }, { "Jennifer", "enter" }, { "Paul", "enter" },
+                { "Curtis", "enter" }, { "Paul", "exit" }, { "Martha", "enter" }, { "Martha", "exit" },
+                { "Jennifer", "exit" } };
+        String[][] badge_records = { { "Paul", "1335" }, { "Jennifer", "1910" }, { "John", "830" }, { "Paul", "1315" },
+                { "John", "835" }, { "Paul", "1405" }, { "Paul", "1630" }, { "John", "855" }, { "John", "915" },
+                { "John", "930" }, { "Jennifer", "1335" }, { "Jennifer", "730" }, { "John", "1630" } };
+        findMismatched(records);
+
+    }
+
+    // 0 outside 1 inside
+    public static void findMismatched(String[][] records) {
+        Set<String> enter = new HashSet<>();
+        Set<String> exit = new HashSet<>();
+        Map<String, Integer> map = new HashMap<>();
+        for (String[] record : records) {
+            String name = record[0];
+            String action = record[1];
+            int status = map.getOrDefault(name, 0);
+            if (action == "enter") {
+                if (status == 1)
+                    exit.add(name);
+                map.put(name, 1);
+            } else {
+                if (status == 0)
+                    enter.add(name);
+                map.put(name, 0);
+            }
+        }
+        for (String key : map.keySet()) {
+            if (map.get(key) == 1)
+                exit.add(key);
+        }
+        System.out.println(enter);
+        System.out.println(exit);
+    }
+
+    public static void findHour(String[][] records) {
+        Map<String, List<Integer>> map = new HashMap<>();
+        for (String[] record : records) {
+            String person = record[0];
+            int time = Integer.parseInt(record[1]);
+            map.putIfAbsent(person, new ArrayList<>());
+            map.get(person).add(time);
+        }
+        // step 2：
+        for (Map.Entry<String, List<Integer>> entry : map.entrySet()) {
+            // helper function to find a person's 1-hour period
+            List<Integer> times = entry.getValue();
+            Collections.sort(times);
+            int[] index = helper(times);
+            if (index[0] != -1) {
+                List<Integer> timesInHour = new ArrayList<>();
+                for (int i = index[0]; i <= index[1]; i++)
+                    timesInHour.add(times.get(i));
+                System.out.println(entry.getKey() + ": " + timesInHour);
+            }
+        }
+    }
+
+    private static int[] helper(List<Integer> list) {
+        // to store left pointer's index and right pointer's index
+        // use two pointers
+        int left = 0;
+        int right = 0;
+        for (; right < list.size(); right++) {
+            while (list.get(right) - list.get(left) > 100) {
+                left++;
+            }
+            // now right pointer and left pointer are in the 1 hour period
+            // when right index - left index >= 2, find a valid hour.
+            // at this time, move right to find valid times in that period as much as
+            // possible
+            // 关键是这里好好想了一会，如果找打三个了，就说明要return了
+            if (right - left >= 2) {
+                while (right < list.size() && list.get(right) - list.get(left) <= 100)
+                    right++;
+                return new int[] { left, right - 1 };
+            }
+        }
+        // don't find a valid hour
+        return new int[] { -1, -1 };
+    }
+}
+```
+
+## grid 0, 1
+
+```javascript
+public class visitedGrid {
+    public static void main(String[] args) {
+        int[][] grid = new int[][] { { 0, -1, 0, 0 }, { 0, 0, -1, 0 }, { 0, 0, 0, 0 } };
+        List<int[]> res1 = findNeighbour(grid, 0, 0);
+        for (int[] poit : res1) {
+            System.out.println(poit[0] + " " + poit[1] + "res");
+        }
+        System.out.println(canReached(grid, 0, 0));
+
+    }
+
+    static int[][] dirs = new int[][] { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
+
+    public static List<int[]> findNeighbour(int[][] grid, int i, int j) {
+        List<int[]> res = new ArrayList<>();
+        for (int[] dir : dirs) {
+            if (i + dir[0] >= 0 && i + dir[0] < grid.length && j + dir[1] >= 0 && j + dir[1] < grid[0].length) {
+                int x = i + dir[0];
+                int y = j + dir[1];
+                if (grid[x][y] == 0)
+                    res.add(new int[] { x, y });
+            }
+        }
+        return res;
+    }
+
+    public static void isReached(int[][] grid, int i, int j) {
+        if (i < 0 || i > grid.length - 1 || j < 0 || j > grid[0].length - 1 || grid[i][j] != 0) {
+            return;
+        }
+        grid[i][j] = -1;
+        for (int[] dir : dirs) {
+            int x = dir[0] + i;
+            int y = dir[1] + j;
+            isReached(grid, x, y);
+        }
+    }
+
+    public static boolean canReached(int[][] grid, int i, int j) {
+        isReached(grid, i, j);
+        for (int x = 0; x < grid.length; x++) {
+            for (int y = 0; y < grid[0].length; y++) {
+                if (grid[x][y] == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
 ```
