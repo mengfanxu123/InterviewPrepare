@@ -167,7 +167,7 @@ public static void main(String[] args) {
 }
 ```
 
-### Dictionary and map
+## Dictionary and map
 
 ```java
 public class testjava {
@@ -216,7 +216,7 @@ public class testjava {
 }
 ```
 
-### Calculator
+## Calculator
 
 ```java
 public static void main(String[] args){
@@ -287,7 +287,7 @@ public static void main(String[] args){
     }
 ```
 
-### Domain and LCS
+## Domain and LCS
 
 ```java
 import java.util.*;
@@ -478,7 +478,7 @@ public class karat {
 }
 ```
 
-Badges 
+## Badges 
 
 ```java
 public class securitySystem {
@@ -621,6 +621,101 @@ public class visitedGrid {
             }
         }
         return true;
+    }
+}
+```
+
+## take by level
+
+```java
+import java.util.*;
+
+public class topologicalSort {
+    public static void main(String[] args) {
+        String[][] tasks = { { "cook", "eat" }, { "study", "eat" }, { "sleep", "study" } };
+        System.out.println(taskByLevel(tasks));
+    }
+
+    public static List<List<String>> taskByLevel(String[][] tasks) {
+        List<List<String>> res = new ArrayList<>();
+        Map<String, List<String>> map = new HashMap<>();
+        Map<String, Integer> indegree = new HashMap<>();
+        for (String[] task : tasks) {
+            String parent = task[0];
+            String child = task[1];
+            map.putIfAbsent(parent, new ArrayList<>());
+            map.putIfAbsent(child, new ArrayList<>());
+            map.get(parent).add(child);
+            indegree.putIfAbsent(task[0], 0);
+            indegree.putIfAbsent(task[1], 0);
+            indegree.put(task[1], indegree.get(task[1]) + 1);
+        }
+        // BFS start from indegree is 0
+        Queue<String> q = new LinkedList<>();
+        for (String key : indegree.keySet()) {
+            if (indegree.get(key) == 0) {
+                q.add(key);
+            }
+        }
+        while (!q.isEmpty()) {
+            int size = q.size();
+            List<String> cur = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+                String parent = q.remove();
+                cur.add(parent);
+                for (String ch : map.get(parent)) {
+                    indegree.put(ch, indegree.get(ch) - 1);
+                    if (indegree.get(ch) == 0) {
+                        q.add(ch);
+                    }
+                }
+            }
+            res.add(new ArrayList<>(cur));
+        }
+        return res;
+    }
+}
+```
+
+## course
+
+```java
+public class courses {
+    public static void main(String[] args) {
+        String[][] pair = new String[][] { { "58", "Software Design" }, { "58", "Linear Algebra" },
+                { "94", "Art History" }, { "94", "Operating Systems" }, { "17", "Software Design" },
+                { "58", "Mechanics" }, { "58", "Economics" }, { "17", "Linear Algebra" }, { "17", "Political Science" },
+                { "94", "Economics" }, { "25", "Economics" }, };
+        System.out.println(findPair(pair));
+
+    }
+
+    public static List<List<String>> findPair(String[][] pairs) {
+        List<List<String>> res = new ArrayList<>();
+        Map<String, Set<String>> map = new HashMap<>();
+        for (String[] pair : pairs) {
+            String id = pair[0];
+            String course = pair[1];
+            map.putIfAbsent(id, new HashSet<>());
+            map.get(id).add(course);
+        }
+        for (String s1 : map.keySet()) {
+            Set<String> cours1 = map.get(s1);
+            for (String s2 : map.keySet()) {
+                List<String> cur = new ArrayList<>();
+                Set<String> cours2 = map.get(s2);
+                if (s1 == s2)
+                    continue;
+                System.out.println(s1 + ": " + s2);
+                cur.add(s1 + " " + s2);
+                for (String c : cours1) {
+                    if (cours2.contains(c))
+                        cur.add(c);
+                }
+                res.add(cur);
+            }
+        }
+        return res;
     }
 }
 ```
