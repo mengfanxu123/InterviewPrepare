@@ -1,6 +1,6 @@
 # Karat - onsite
 
-```text
+```javascript
 const rawData = [
   {
     "title": "Animals",
@@ -64,6 +64,82 @@ const rawData = [
        - Japanese Bobtail
      - Scottish Fold
 */
+
+const findCategory = (data, level) => {
+  if (data.title != null) {
+    let res = "";
+    let space = level;
+    while (space-- > 0) {
+      res += " ";
+    }
+    res += `-${data.title}`;
+    console.log(res);
+  }
+  if (data.children != null) {
+    data.children.forEach((el) => {
+      findCategory(el, level + 1);
+    });
+  }
+};
+
+const find = (array) => {
+  array.forEach((el) => {
+    findCategory(el, 0);
+  });
+};
+
+const rawData = [
+  {
+    title: "Animals",
+    children: [
+      {
+        title: "Dogs",
+        children: [
+          {
+            title: "Pitbull",
+            children: [
+              {
+                title: "English Pitbull",
+                children: null,
+              },
+              {
+                title: "American Pibull",
+              },
+            ],
+          },
+          {
+            title: "Chihuahua",
+            children: null,
+          },
+        ],
+      },
+      {
+        title: "Cats",
+        children: [
+          {
+            title: "Calico",
+            children: [
+              {
+                title: "British Shorthair",
+                children: null,
+              },
+              {
+                title: "Japenese Bobtail",
+              },
+            ],
+          },
+          {
+            title: "Scottish Fold",
+            children: null,
+          },
+        ],
+      },
+    ],
+  },
+];
+
+find(rawData);
+
 ```
 
 
@@ -158,4 +234,82 @@ follow up，如果房子和边界之间也要修栅栏怎么算。
   
 第五轮，亚裔vp  
 看面试安排上写着什么技术deep dive，但他太能说了，基本上都是在介绍自己公司，也不知道要考察啥。
+
+第一轮coding, 白人小哥，给一个string pattern 和 一个string，要求替换掉string里面match pattern的sub-string
+
+用matcher / pattern 做的
+
+第二轮coding，calculator 只有加减，followup是有乘除
+
+第三轮system design, Instgram
+
+第四轮bq，日常问题
+
+## Calculator 
+
+```javascript
+// just has "+" and "-"
+class Solution {
+    public int calculate(String s) {
+        if(s == null || s.length() == 0) return 0;
+        int num = 0;
+        char sign = '+';
+        int res = 0;
+        for (int i = 0; i < s.length(); i++){
+          if(Character.isDigit(s.charAt(i))){
+            num = num*10 + s.charAt(i) - '0';
+          }
+          if(!Character.isDigit(s.charAt(i)) && s.charAt(i) != ' ' || i == s.length() - 1){
+            if(sign == '+'){
+              res += num;
+            }
+            if(sign == '-'){
+              res -= num;
+            }
+            num = 0;
+            sign = s.charAt(i);
+          }
+        }
+      return res;
+    }
+}
+
+// has + - * /
+class Solution {
+    public int calculate(String s) {
+        if(s == null || s.length() == 0) return 0;
+        int num = 0;
+        char sign = '+';
+        int res = 0;
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++){
+          if(Character.isDigit(s.charAt(i))){
+            num = num*10 + s.charAt(i) - '0';
+          }
+          if(!Character.isDigit(s.charAt(i)) && s.charAt(i) != ' ' || i == s.length() - 1){
+            if(sign == '+'){
+              stack.push(num);
+            }
+            if(sign == '-'){
+             stack.push(-num);
+            }
+            if(sign == '*'){
+              stack.push(stack.pop() * num);
+            }
+             if(sign == '/'){
+              stack.push(stack.pop() / num);
+            }
+            num = 0;
+            sign = s.charAt(i);
+          }
+        }
+      while(!stack.isEmpty()){
+        res += stack.pop();
+      }
+      return res;
+    }
+}
+```
+
+
 
