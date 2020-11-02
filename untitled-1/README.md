@@ -39,7 +39,27 @@ margin border padding context and box model is essentially a box that wraps arou
 
 set parent element display: flex 
 
-#### perfect centering
+container and item
+
+flex box is single direction layout concept. base on horizontal rows or vertical columns
+
+```css
+.container {
+  flex-direction: row | row-reverse | column | column-reverse;
+}
+```
+
+
+
+This defines the alignment along the main axis. It helps distribute extra free space leftover when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.
+
+```css
+.container {
+  justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
+}
+```
+
+## perfect centering
 
 {% code title="center div" %}
 ```css
@@ -168,7 +188,9 @@ An element with greater stack order is always in front of an element with a lowe
 
 **Note:** `z-index` only works on positioned elements \(position: absolute, position: relative, position: fixed, or position: sticky\).
 
-### combine selectors
+## combine selectors
+
+
 
 
 
@@ -177,7 +199,7 @@ Selector	Example	Example description
 element element	div p	Selects all <p> elements inside <div> elements
 element>element	div > p	Selects all <p> elements where the parent is a <div> element
 element+element	div + p	Selects all <p> elements that are placed immediately after <div> elements
-element1~element2	p ~ ul	Selects every <ul> element that are preceded by a <p> element
+element1~element2	p ~ ul	Selects every <ul> element that are preceded by a <p> element, ul has same ul
 ```
 
 ### Nav bar 
