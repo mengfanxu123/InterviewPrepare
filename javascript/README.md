@@ -31,8 +31,9 @@ However, only the variable declarations and function declarations are hoisted. V
 ```javascript
 console.log(myName);
 var myName = "Mandy";
-// out put undefined
-
+// out put undefined,
+// first move up to top scope and do declare 
+// const will not move up and error for output
 var myName;
 console.log(myName);
 myName = "Mandy"
