@@ -606,3 +606,8 @@ version2
   }
 ```
 
+```javascript
+const a = (n) => new Array(3).fill("*").join(' ');
+const a = 
+```
+
