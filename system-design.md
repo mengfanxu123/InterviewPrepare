@@ -6,6 +6,8 @@ need a gateway server to deal with
 
 client use HTML protocol 
 
+## 
+
 How to reroute to different server side
 
 
@@ -61,6 +63,15 @@ effect way is use peer to peer protocol tcp use connect id to connect with serve
 
 
 
-1. 
+## 2. youtube . spotify \(video\)
+
+
+
+![](.gitbook/assets/screen-shot-2020-11-08-at-5.00.17-pm.png)
+
+## Top K
+
+{% embed url="https://www.evernote.com/shard/s440/client/snv?noteGuid=db5d1f47-fc86-4bed-3323-46a19a029216&noteKey=53aa5fffcc236d3b7ef209ef5d916639&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs440%2Fsh%2Fdb5d1f47-fc86-4bed-3323-46a19a029216%2F53aa5fffcc236d3b7ef209ef5d916639&title=Design%2Ba%2Bsystems%2Bwhich%2Bfinds%2BTop%2BK%2528Heavy%2BHitters%2529" %}
+
 
 
