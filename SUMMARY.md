@@ -93,6 +93,7 @@
 
 * [BQ](oracle/bq.md)
 * [leetcode](oracle/leetcode.md)
+* [Untitled](oracle/untitled.md)
 
 ## algorithm
 
@@ -120,5 +121,6 @@
 * [General BQ](general-bq.md)
 * [Karat - Compass](karat-compass.md)
 * [Karat - onsite](karat-onsite.md)
+* [System design](system-design.md)
 * [Apple](apple.md)
 
