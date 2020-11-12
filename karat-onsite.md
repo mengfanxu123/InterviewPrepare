@@ -358,5 +358,29 @@ class RandomizedSet {
  * boolean param_2 = obj.remove(val);
  * int param_3 = obj.getRandom();
  */
+ 
+ class Solution {
+    public List<Integer> topKFrequent(int[] nums, int k) {
+        List<Integer> res = new ArrayList<>();
+        if(nums == null || nums.length == 0) return res;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int num : nums){
+            int count = map.getOrDefault(num, 0) + 1;
+            map.put(num, count);
+        }
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> map.get(a) - map.get(b));
+        for (int num : map.keySet()){
+            pq.add(num);
+            if(pq.size() > k){
+                pq.poll();
+            }
+        }
+        while(!pq.isEmpty()){
+            res.add(pq.poll());
+        }
+        Collections.reverse(res);
+        return res;
+    }
+}
 ```
 
