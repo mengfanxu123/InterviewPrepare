@@ -167,7 +167,7 @@ interface Clound {
   
 Onsite 3. 李口依伞酒，follow up是李口伊思林，但是只需要返回一个结果即可。  
   
-Onsite 4. [system design](https://link.1point3acres.com/?url=http%3A%2F%2Fwww.educative.io%2Fcourses%2Fgrokking-the-system-design-interview%3Faffiliate_id%3D5749180081373184%2F)，设计一个简单的Search功能：用户输入Address，返回周边的房屋信息，涉及到了前端的User Experience和后端的Performance等细节。不需要在白板上写，口述+讨论即可。  
+**Onsite 4.** [**system design**](https://link.1point3acres.com/?url=http%3A%2F%2Fwww.educative.io%2Fcourses%2Fgrokking-the-system-design-interview%3Faffiliate_id%3D5749180081373184%2F)**，设计一个简单的Search功能：用户输入Address，返回周边的房屋信息，涉及到了前端的User Experience和后端的Performance等细节。不需要在白板上写，口述+讨论即可。**  
   
 面试体验还不错，但是自我感应该没戏。在第一轮和第三轮的聊天过程中，面试官心不在焉+东张西望，而且也很惊讶为何我作为前端要申请后端职位。  
 
@@ -213,7 +213,7 @@ input是 List&lt;Station&gt; , start, end
 压缩/解压 string 还没力扣上那么复杂 xxxyyy -&gt; 3x3y xyz-&gt; xyz  
   
 第三轮亚裔小哥  
-交流有点费劲， 设计一个定时发邮件系统  
+交流有点费劲， 设计一个**定时发邮件系统**  
   
 第四轮 bq  
 hm是ex[亚麻](https://link.1point3acres.com/?url=https%3A%2F%2Fwww.amazon.com%2F)某南亚大国人士。。。。就正常bq + 问问题  
