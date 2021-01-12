@@ -1,6 +1,6 @@
 # instacart
 
-```text
+```javascript
 // const timeMap = function () {
 //   this.map = new Map();
 //   this.recentMap = new Map();
@@ -46,5 +46,24 @@
 // m.set("a", "a2", 2);
 // m.set("a", "a3", 4);
 // console.log(m.get("a", 3));
+
+
+const map = function () {
+  this.map = new Map();
+  this.recentMap = new Map();
+};
+
+map.prototype.set = function (key, value, timestamp) {
+  this.map.set(`${key}-${timestamp}`, value);
+  this.recentMap.set(key, value);
+};
+
+map.prototype.get = function (key, timestamp) {
+  if (timestamp !== null) {
+    return this.map.get(`${key}-${timestamp}`);
+  } else {
+    return this.recentMap.get(key);
+  }
+};
 ```
 
