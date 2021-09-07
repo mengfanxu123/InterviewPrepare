@@ -1,5 +1,25 @@
 # JavaScript
 
+## This
+
+this is pointer to global if not any pointer,
+
+use bind apply to use this pointer you want.
+
+```text
+const object = {
+ a: 5,
+ b: 7
+}
+const thisFunction = function(c, d) {
+ return this.a + this.b + c + d;
+}
+thisFunction.call(object, 12, 4);
+//will return 28
+thisFunction.apply(object, [3, 6]);
+//will return 21
+```
+
 ### JavaScript
 
 JavaScript is a high-level, interpreted programming language
@@ -1217,4 +1237,15 @@ let b = 2;
 
 [a, b] = [b, a];
 ```
+
+## null and undefined
+
+1. undefined means a vriable be defined but not assign value;
+2. null means is a assign value but value is no value
+
+
+
+A `React Element` is what you would consider to be a basic html\(dom to be precise\) element. It is just a way of creating element without using the much controversial jsx format.
+
+A `React Component` is what you can consider as an object. It has its methods, supports `React lifecycles` and is generally unreusable \(at least haven't found any reuse yet, welcome to examples\). It necessarily needs to have a render function.
 

@@ -1,5 +1,40 @@
 # React
 
+### this
+
+In React component classes we define methods that will refer to class attributes such as props and state. However, for our methods to have access to this.state and this.props we need to bind the React component ‘this’ context to those methods.
+
+Binding ‘this’ to the class methods enables us to access props and state for the component with this.props and this.state.
+
+
+
+As you noticed, binding ‘this’ to your class methods can create a lot of boiler plate. The arrow function introduced in ES6 is a function with the current ‘this’ context already bound to the function. Because of this nice functionality we can use public class fields to automatically bind this to our methods.
+
+
+
+```text
+import React, { Component } from ‘react’;class App extends Component {
+  constructor(props) {
+    super(props);
+    this.clickFunction = this.clickFunction.bind(this);
+  }  clickFunction() {
+    console.log(this.props.value);
+  }  render() {
+    return(
+      <div onClick={this.clickFunction}>Click Me!</div>
+    );
+  }
+}
+
+const myFunction = () => {
+ return this.props.a + this.props.b;
+}
+//The previous stated myFunction is the same as...
+const myFunction = function() {
+  return this.props.a + this.props.b;
+}.bind(this);
+```
+
 ### React advantages
 
 * Virtual DOM improves both the experience of the user and work of the developer — Virtual DOM helps to update any user’s changes without the other parts’ interference by applying isolated components. It greatly helps to smooth the experience of all participants in real time mode.
@@ -656,7 +691,9 @@ class NameForm extends React.Component {
 
 CORS is a security mechanism built into \(all\) modern web-browsers \(yes! into your web browser! That’s why your curl calls works fine\). It basically blocks all the http requests from your front end to any API that is not in the same “Origin” \(domain, protocol, and port—which is the case most of the time\).
 
+### **What is the purpose of callback function as an argument of setState\(\)?**
 
+. And the API call should be only performed on special state change, and not on **every** render.
 
 {% embed url="https://reactjs.org/docs/state-and-lifecycle.html" %}
 
