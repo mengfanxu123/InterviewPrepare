@@ -4,6 +4,7 @@
 * [CSS](untitled-1/README.md)
   * [Interview question CSS](untitled-1/untitled.md)
 * [JavaScript](javascript/README.md)
+  * [DOM](javascript/dom.md)
   * [JavaScript](javascript/javascript.md)
   * [question in interview](javascript/question-in-interview.md)
   * [Javascript DOM](javascript/javascript-dom.md)
