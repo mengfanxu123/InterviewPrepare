@@ -96,3 +96,28 @@ setTimeout(() => {
 // });
 ```
 
+retry api many times
+
+```javascript
+retry(fn, times, dely){
+  try{
+    return await fn();  
+  } catch (e) {
+    if(!times){
+      throw new error(e);
+    }
+    return await retry(fn, times--,dely);
+  }
+}
+```
+
+### promise all
+
+```javascript
+function all(promises){
+    return promises.reduce((acc, cur) => {
+        return acc.then((ress) => Promise.resolve(cur).then(r => [...ress, r]))
+    }, Promise.resolve([])
+}
+```
+
