@@ -116,3 +116,31 @@ useEffect(() => {
 
 If you want to run an effect and clean it up only once \(on mount and unmount\), you can pass an empty array \(`[]`\) as a second argument. This tells React that your effect doesn’t depend on _any_ values from props or state, so it never needs to re-run. This isn’t handled as a special case — it follows directly from how the dependencies array always works.
 
+
+
+use effect by seperate logic
+
+**ooks let us split the code based on what it is doing** rather than a lifecycle method name. React will apply _every_ effect used by the component, in the order they were specified.
+
+####  <a id="explanation-why-effects-run-on-each-update"></a>
+
+```text
+function FriendStatusWithCounter(props) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {    document.title = `You clicked ${count} times`;
+  });
+
+  const [isOnline, setIsOnline] = useState(null);
+  useEffect(() => {    function handleStatusChange(status) {
+      setIsOnline(status.isOnline);
+    }
+
+    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+    return () => {
+      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+    };
+  });
+  // ...
+}
+```
+
