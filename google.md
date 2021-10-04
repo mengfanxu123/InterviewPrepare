@@ -2,9 +2,17 @@
 
 ## BQ
 
-Talk about the projects you worked on One time you went above and beyond to help others One time you have to change the design decisions midway
+Talk about the projects you worked on 
+
+One time you went above and beyond to help others 
+
+One time you have to change the design decisions midway
 
 One time when you work with tight deadline
+
+Tell me your most challenging project； 
+
+What would you do if you see a co-worker struggling
 
 
 
