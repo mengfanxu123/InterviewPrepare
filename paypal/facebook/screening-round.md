@@ -158,3 +158,160 @@ function throttle(func, wait) {
   }
 }
 ```
+
+### implement basic debounce
+
+```javascript
+// Some code
+function debounce(func, wait) {
+  let cancel = null;
+  return (args) => {
+    clearTimeout(cancel)
+    cancel = setTimeout(() => func(...args), wait)
+  }
+}
+```
+
+### Clear all timeout&#x20;
+
+```javascript
+// Some code
+28. implement clearAllTimeout()
+
+setTimeout(func1, 10000)
+setTimeout(func2, 10000)
+setTimeout(func3, 10000)
+
+// all 3 functions are scheduled 10 seconds later
+clearAllTimeout()
+
+// all scheduled tasks are cancelled.
+
+
+/**
+ * cancel all timer from window.setTimeout
+ */
+let timers = [];
+let originalClearTimeout = setTimeout;
+window.setTimeout = (...args) => {
+  var timerId = originalClearTimeout(...args);
+  timers.push(timerId);
+  return timerId;
+}
+function clearAllTimeout() {
+  // your code here
+  timers.forEach(t=>window.clearTimeout(t));
+}
+
+```
+
+### Improve a function
+
+```javascript
+// Some code
+let items = [
+  {color: 'red', type: 'tv', age: 18}, 
+  {color: 'silver', type: 'phone', age: 20},
+  {color: 'blue', type: 'book', age: 17}
+] 
+
+// an exclude array made of key value pair
+const excludes = [ 
+  {k: 'color', v: 'silver'}, 
+  {k: 'type', v: 'tv'}, 
+  ...
+] 
+
+function excludeItems(items, excludes) { 
+  excludes.forEach( pair => { 
+    items = items.filter(item => item[pair.k] === item[pair.v])
+  })
+ 
+  return items
+} 
+/**
+ * @param {object[]} items
+ * @excludes { Array< {k: string, v: any} >} excludes
+ */
+
+/**
+ * @param {object[]} items
+ * @param { Array< {k: string, v: any} >} excludes
+ * @return {object[]}
+ */
+function excludeItems(items, excludes) {
+  let map = new Map();
+  for (let {k, v} of excludes){
+    if(!map.has(k)){
+      map.set(k, new Set());
+    }
+      map.get(k).add(v);
+  }
+  return items.filter(el => {
+    return !Object.keys(el).some(key => map.has(key) && map.get(key).has(el[key]));
+  })
+}
+```
+
+### Create a simple store for DOM element
+
+```actionscript
+// Some code
+class NodeStore {
+   /**
+   * @param {Node} node
+   * @param {any} value
+   */
+  constructor(){
+    this.map = {};
+  }
+  set(node, value) {
+   const symbol = Symbol();
+   node.symbol = symbol;
+   this.map[symbol] = value;
+  }
+  /**
+   * @param {Node} node
+   * @return {any}
+   */
+  get(node) {
+   const symbol = node.symbol;
+   return this.map[symbol];
+  }
+  
+  /**
+   * @param {Node} node
+   * @return {Boolean}
+   */
+  has(node) {
+    return this.map[node.symbol] !== undefined;
+  }
+}
+```
+
+### _give distance, time as parameter, wirte a function can do animation that move a box from left side to right side._
+
+__
+
+```javascript
+// Some code
+let e = document.getElementById("move");
+const animationElement = function(element, duration, distance)
+{
+  const startTime = new Date().getTime();
+  let endTime = null;
+  const ani = setInterval(()=> {
+    endTime = new Date().getTime();
+    const p = (endTime - startTime)/duration;
+    if(p >= 1){
+      clearInterval(ani);
+    }
+      element.style["margin-left"] = p * distance + "px";
+  }, 10)
+}
+
+
+animationElement(e, 3000, 200);
+```
+
+__
