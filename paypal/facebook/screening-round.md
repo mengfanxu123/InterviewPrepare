@@ -314,4 +314,144 @@ const animationElement = function(element, duration, distance)
 animationElement(e, 3000, 200);
 ```
 
-__
+### 113. Virtual DOM I
+
+```javascript
+// Some code
+/**
+ * @param {HTMLElement} 
+ * @return {object} object literal presentation
+ */
+function virtualize(element) {
+  // your code here
+  const result = {
+    type: element.tagName.toLowerCase(),
+    props: {}
+  }
+  // props without children
+  for (let attr of element.attributes){
+    const name = attr.name === "class" ? "className" : attr.name;
+    result.props[name] = attr.value;
+  }
+  //children
+  const children = [];
+  for (let node of element.childNodes){
+     if (node.nodeType === 3) { // text node
+      children.push(node.textContent)
+    } else {
+      children.push(virtualize(node))
+    }
+  }
+  result.props.children = children.length === 1 ? children[0] : children
+  return result
+}
+
+
+/**
+ * @param {object} valid object literal presentation
+ * @return {HTMLElement} 
+ */
+function render(json) {
+  // your code here
+  if (typeof json === 'string') {
+    return document.createTextNode(json)
+  }
+  
+  // element
+  const {type, props: {children, ...attrs}} = json
+  const element = document.createElement(type)
+  
+  for (let [attr, value] of Object.entries(attrs)) {
+    element[attr] = value
+  }
+  
+  const childrenArr = Array.isArray(children) ? children : [children]
+  
+  for (let child of childrenArr) {
+    element.append(render(child))
+  }
+  
+  return element
+}
+
+```
+
+### 118. Virtual DOM II - createElement
+
+```javascript
+// Some code
+function createElement(type, props, ...children) {
+  // your code here
+  return {
+    type,
+    props: {
+      ...props,
+      children
+    }
+  }
+}
+
+
+/**
+ * @param { MyElement }
+ * @returns { HTMLElement } 
+ */
+function render(myElement) {
+  // your code here
+ if (typeof myElement === 'string') {
+    return document.createTextNode(myElement);
+  }
+  const {type, props: { children, ...attrs}} = myElement;
+  const currentNode = document.createElement(type);
+  for(let [attr, value] of Object.entries(attrs)) {
+    currentNode[attr] = value;
+  }
+  const childrenArr = Array.isArray(children) ? children : [children];
+  for (let child of childrenArr) {
+    currentNode.append(render(child));
+  }
+  return currentNode;
+}
+```
+
+### 140. Virtual DOM III - Functional Component
+
+```javascript
+// Some code
+140. Virtual DOM III - Functional Component
+function createElement(type, props, ...children) {
+  // your code here
+  if(typeof type === 'function'){
+    return type ({...props, children});
+  }
+  return {
+    type,
+    props: {
+      ...props,
+      children
+    }
+  }
+}
+
+
+/**
+ * @param { MyElement }
+ * @returns { HTMLElement } 
+ */
+function render(myElement) {
+  // your code here
+  if (typeof myElement === 'string'){
+    return document.createTextNode(myElement);
+  }
+  const {type, props: {children, ...attrs}} = myElement;
+  const node = document.createElement(type);
+   for(let [attr, value] of Object.entries(attrs)) {
+    node[attr] = value;
+  }
+  const childrenArr = Array.isArray(children) ? children : [children];
+  for (let child of childrenArr) {
+    node.append(render(child));
+  }
+  return node;
+}
+```
