@@ -296,6 +296,7 @@ __
 ```javascript
 // Some code
 let e = document.getElementById("move");
+let e1= document.getElementById("framemove");
 const animationElement = function(element, duration, distance)
 {
   const startTime = new Date().getTime();
@@ -310,6 +311,25 @@ const animationElement = function(element, duration, distance)
   }, 10)
 }
 
+const element = document.getElementById('framemove');
+const moveit = function (timestamp, el, dist, duration){
+    //if browser doesn't support requestAnimationFrame, generate our own timestamp using Date:
+    var timestamp = timestamp || new Date().getTime()
+    var runtime = timestamp - starttime
+    var progress = runtime / duration
+    progress = Math.min(progress, 1)
+    el.style["margin-left"] = (dist * progress).toFixed(2) + 'px'
+    if (runtime < duration){ // if duration not met yet
+        window.requestAnimationFrame(function(timestamp){ // call requestAnimationFrame again with parameters
+            moveit(timestamp, el, dist, duration)
+        })
+    }
+}
+
+window.requestAnimationFrame(function(timestamp){
+    starttime = timestamp || new Date().getTime() //if browser doesn't support requestAnimationFrame, generate our own timestamp using Date
+    moveit(timestamp, e1, 400, 2000) // 400px over 1 second
+})
 
 animationElement(e, 3000, 200);
 ```
