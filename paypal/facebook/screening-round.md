@@ -122,6 +122,7 @@ const findCorrespondingNode = (rootA, rootB, target) => {
 // API
 onst findCorrespondingNode = (rootA, rootB, target) => {
   // your code here
+  //The TreeWalker object represents the nodes of a document subtree and a position within them
   const rootAWalker = document.createTreeWalker(rootA, NodeFilter.SHOW_ELEMENT);
   const rootBWalker = document.createTreeWalker(rootB, NodeFilter.SHOW_ELEMENT);
   let currentNodes = [rootAWalker.currentNode, rootBWalker.currentNode]
