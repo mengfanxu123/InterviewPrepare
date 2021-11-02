@@ -475,3 +475,44 @@ function render(myElement) {
   return node;
 }
 ```
+
+### get DOM tree height
+
+```javascript
+// Some code
+function getHeight(tree){
+    let maxHeight = 0;
+    if(!tree){
+     return maxHeight;
+    }
+    for (let chid of tree.childern){
+    maxHeight = Math.max(maxHeight, getHeight(child));
+    }
+    return maxHeight + 1;
+}
+```
+
+### Traverse DOM level by level
+
+```javascript
+// Some code
+
+function flatten(root){
+const res = [];
+  if(!root){
+    return res;
+  }
+  const queue = [root];
+  while(queue.length){
+    const node = queue.shift();
+    res.push(node);
+    for(const child of node.children){
+      queue.push(child);
+    }
+  }
+  return res;
+}
+```
+
+[\
+](https://bigfrontend.dev/problem?tags=JavaScript)
